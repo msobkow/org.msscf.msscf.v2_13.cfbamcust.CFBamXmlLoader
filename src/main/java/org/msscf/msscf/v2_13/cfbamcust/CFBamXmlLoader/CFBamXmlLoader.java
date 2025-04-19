@@ -51,10 +51,10 @@ public class CFBamXmlLoader
 {
 
 	// The namespace URI of the supported schema
-	public final static String	SCHEMA_XMLNS = "uri://org.msscf/msscf/2.0.13/mssbam";
+	public final static String	SCHEMA_XMLNS = "http://msscf.org:8088/msscf/2.0.13/mssbam";
 
 	// The source for loading the supported schema
-	public final static String	SCHEMA_URI = "/opt/msscf/2.0.13/xsd/mssbam-2.13.xsd";
+	public final static String	SCHEMA_URI = "http://msscf.org:8088/msscf/2.0.13/xsd/mssbam-2.13.xsd";
 	public final static String	SCHEMA_ROOT_URI = "/xsd/mssbam-2.13.xsd";
 
 	// The schema instance to load in to
