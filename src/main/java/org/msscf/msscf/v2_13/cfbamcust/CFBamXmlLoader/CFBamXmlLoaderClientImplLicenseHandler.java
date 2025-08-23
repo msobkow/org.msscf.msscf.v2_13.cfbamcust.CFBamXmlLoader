@@ -27,6 +27,7 @@
 package org.msscf.msscf.v2_13.cfbamcust.CFBamXmlLoader;
 
 import org.msscf.msscf.v2_13.cflib.CFLib.*;
+import org.msscf.msscf.v2_13.cflib.CFLib.xml.*;
 import org.xml.sax.*;
 import org.msscf.msscf.v2_13.cfbam.CFBamObj.*;
 

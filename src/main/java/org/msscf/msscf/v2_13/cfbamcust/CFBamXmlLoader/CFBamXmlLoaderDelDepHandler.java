@@ -29,6 +29,7 @@ package org.msscf.msscf.v2_13.cfbamcust.CFBamXmlLoader;
 import java.util.Iterator;
 
 import org.msscf.msscf.v2_13.cflib.CFLib.*;
+import org.msscf.msscf.v2_13.cflib.CFLib.xml.*;
 
 import org.xml.sax.*;
 

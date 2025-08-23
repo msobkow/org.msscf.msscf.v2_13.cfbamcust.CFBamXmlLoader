@@ -31,6 +31,7 @@ import java.sql.*;
 import java.text.*;
 import java.util.*;
 import org.msscf.msscf.v2_13.cflib.CFLib.*;
+import org.msscf.msscf.v2_13.cflib.CFLib.xml.*;
 import org.apache.commons.codec.binary.Base64;
 import org.xml.sax.*;
 import org.msscf.msscf.v2_13.cfbam.CFBam.*;

@@ -37,8 +37,8 @@ import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
 import org.msscf.msscf.v2_13.cflib.CFLib.*;
+import org.msscf.msscf.v2_13.cflib.CFLib.xml.*;
 
-import org.apache.xerces.xni.grammars.Grammar;
 import org.xml.sax.*;
 
 import org.msscf.msscf.v2_13.cfbam.CFBamObj.*;
@@ -62,49 +62,12 @@ public class CFBamXmlLoader
 	private ICFBamSchemaObj schemaObj = null;
 	// Loader behaviour configuration attributes
 
-	protected static Grammar myGrammar = null;
-
 	// Constructors
 
 	public CFBamXmlLoader( MSSBamCFEngine engine, ICFLibMessageLog jLogger ) {
 		super( engine, jLogger );
 		bamEngine = engine;
 		setRootElementHandler( getSaxRootHandler() );
-		if( myGrammar == null ) {
-			InputStream input;
-			File file = new File( SCHEMA_URI );
-			if( file.exists() ) {
-				try {
-					input = new FileInputStream( file );
-				}
-				catch( Exception e ) {
-					input = null;
-				}
-				if( input != null ) {
-					myGrammar = addToGrammarPool( SCHEMA_URI, input );
-				}
-			}
-			else {
-				file = new File( SCHEMA_ROOT_URI );
-				if( file.exists() ) {
-					try {
-						input = new FileInputStream( file );
-					}
-					catch( Exception e ) {
-						input = null;
-					}
-					if( input != null ) {
-						myGrammar = addToGrammarPool( SCHEMA_URI, input );
-					}
-				}
-				else {
-					input = getClass().getResourceAsStream( SCHEMA_ROOT_URI );
-					if( input != null ) {
-						myGrammar = addToGrammarPool( SCHEMA_ROOT_URI, input );
-					}
-				}
-			}
-		}
 		initParser();
 	}
 
