@@ -1,5 +1,5 @@
 <?xml version="1.1" encoding="UTF-8" standalone="no"?>
-<xsd:schema xmlns="http://msscf.org:8088/msscf/2.0.13/xsd/mssbam-2.13.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://msscf.org:8088/msscf/2.0.13/xsd/mssbam-2.13.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.13">
+<xsd:schema xmlns="http://msscf.org/msscf/2.0.13/xsd/mssbam-2.13" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://msscf.org/msscf/2.0.13/xsd/mssbam-2.13" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.13">
 
 <xsd:annotation>
 	<xsd:documentation xml:lang="en">
@@ -4189,6 +4189,566 @@
 	<xsd:restriction base="xsd:integer"/>
 </xsd:simpleType>
 
+<xsd:simpleType name="Uuid6ColTenantIdType">
+	<xsd:restriction base="TenantIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="Uuid6ColIdType">
+	<xsd:restriction base="ValueIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="Uuid6ColTableIdType">
+	<xsd:restriction base="ScopeIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="Uuid6ColRevisionType">
+	<xsd:restriction base="xsd:integer"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="Uuid6DefTenantIdType">
+	<xsd:restriction base="TenantIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="Uuid6DefIdType">
+	<xsd:restriction base="ValueIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="Uuid6DefInitValueType">
+	<xsd:restriction base="xsd:string"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="Uuid6DefRevisionType">
+	<xsd:restriction base="xsd:integer"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="Uuid6GenTenantIdType">
+	<xsd:restriction base="TenantIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="Uuid6GenIdType">
+	<xsd:restriction base="ValueIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="Uuid6GenDispenserTenantIdType">
+	<xsd:restriction base="TenantIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="Uuid6GenDispenserIdType">
+	<xsd:restriction base="ScopeIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="Uuid6GenDispenserType">
+	<xsd:restriction base="NameTypeType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="Uuid6GenSliceType">
+	<xsd:restriction base="xsd:short"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="Uuid6GenBlockSizeType">
+	<xsd:restriction base="xsd:integer"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="Uuid6GenRevisionType">
+	<xsd:restriction base="xsd:integer"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="Uuid6TypeTenantIdType">
+	<xsd:restriction base="TenantIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="Uuid6TypeIdType">
+	<xsd:restriction base="ValueIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="Uuid6TypeSchemaDefIdType">
+	<xsd:restriction base="ScopeIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="Uuid6TypeRevisionType">
+	<xsd:restriction base="xsd:integer"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash128ColTenantIdType">
+	<xsd:restriction base="TenantIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash128ColIdType">
+	<xsd:restriction base="ValueIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash128ColTableIdType">
+	<xsd:restriction base="ScopeIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash128ColRevisionType">
+	<xsd:restriction base="xsd:integer"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash128DefTenantIdType">
+	<xsd:restriction base="TenantIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash128DefIdType">
+	<xsd:restriction base="ValueIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash128DefInitValueType">
+	<xsd:restriction base="xsd:string"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash128DefRevisionType">
+	<xsd:restriction base="xsd:integer"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash128GenTenantIdType">
+	<xsd:restriction base="TenantIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash128GenIdType">
+	<xsd:restriction base="ValueIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash128GenDispenserTenantIdType">
+	<xsd:restriction base="TenantIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash128GenDispenserIdType">
+	<xsd:restriction base="ScopeIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash128GenDispenserType">
+	<xsd:restriction base="NameTypeType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash128GenSliceType">
+	<xsd:restriction base="xsd:short"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash128GenBlockSizeType">
+	<xsd:restriction base="xsd:integer"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash128GenRevisionType">
+	<xsd:restriction base="xsd:integer"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash128TypeTenantIdType">
+	<xsd:restriction base="TenantIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash128TypeIdType">
+	<xsd:restriction base="ValueIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash128TypeSchemaDefIdType">
+	<xsd:restriction base="ScopeIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash128TypeRevisionType">
+	<xsd:restriction base="xsd:integer"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash160ColTenantIdType">
+	<xsd:restriction base="TenantIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash160ColIdType">
+	<xsd:restriction base="ValueIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash160ColTableIdType">
+	<xsd:restriction base="ScopeIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash160ColRevisionType">
+	<xsd:restriction base="xsd:integer"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash160DefTenantIdType">
+	<xsd:restriction base="TenantIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash160DefIdType">
+	<xsd:restriction base="ValueIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash160DefInitValueType">
+	<xsd:restriction base="xsd:string"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash160DefRevisionType">
+	<xsd:restriction base="xsd:integer"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash160GenTenantIdType">
+	<xsd:restriction base="TenantIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash160GenIdType">
+	<xsd:restriction base="ValueIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash160GenDispenserTenantIdType">
+	<xsd:restriction base="TenantIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash160GenDispenserIdType">
+	<xsd:restriction base="ScopeIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash160GenDispenserType">
+	<xsd:restriction base="NameTypeType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash160GenSliceType">
+	<xsd:restriction base="xsd:short"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash160GenBlockSizeType">
+	<xsd:restriction base="xsd:integer"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash160GenRevisionType">
+	<xsd:restriction base="xsd:integer"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash160TypeTenantIdType">
+	<xsd:restriction base="TenantIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash160TypeIdType">
+	<xsd:restriction base="ValueIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash160TypeSchemaDefIdType">
+	<xsd:restriction base="ScopeIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash160TypeRevisionType">
+	<xsd:restriction base="xsd:integer"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash224ColTenantIdType">
+	<xsd:restriction base="TenantIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash224ColIdType">
+	<xsd:restriction base="ValueIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash224ColTableIdType">
+	<xsd:restriction base="ScopeIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash224ColRevisionType">
+	<xsd:restriction base="xsd:integer"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash224DefTenantIdType">
+	<xsd:restriction base="TenantIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash224DefIdType">
+	<xsd:restriction base="ValueIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash224DefInitValueType">
+	<xsd:restriction base="xsd:string"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash224DefRevisionType">
+	<xsd:restriction base="xsd:integer"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash224GenTenantIdType">
+	<xsd:restriction base="TenantIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash224GenIdType">
+	<xsd:restriction base="ValueIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash224GenDispenserTenantIdType">
+	<xsd:restriction base="TenantIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash224GenDispenserIdType">
+	<xsd:restriction base="ScopeIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash224GenDispenserType">
+	<xsd:restriction base="NameTypeType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash224GenSliceType">
+	<xsd:restriction base="xsd:short"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash224GenBlockSizeType">
+	<xsd:restriction base="xsd:integer"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash224GenRevisionType">
+	<xsd:restriction base="xsd:integer"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash224TypeTenantIdType">
+	<xsd:restriction base="TenantIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash224TypeIdType">
+	<xsd:restriction base="ValueIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash224TypeSchemaDefIdType">
+	<xsd:restriction base="ScopeIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash224TypeRevisionType">
+	<xsd:restriction base="xsd:integer"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash256ColTenantIdType">
+	<xsd:restriction base="TenantIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash256ColIdType">
+	<xsd:restriction base="ValueIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash256ColTableIdType">
+	<xsd:restriction base="ScopeIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash256ColRevisionType">
+	<xsd:restriction base="xsd:integer"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash256DefTenantIdType">
+	<xsd:restriction base="TenantIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash256DefIdType">
+	<xsd:restriction base="ValueIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash256DefInitValueType">
+	<xsd:restriction base="xsd:string"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash256DefRevisionType">
+	<xsd:restriction base="xsd:integer"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash256GenTenantIdType">
+	<xsd:restriction base="TenantIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash256GenIdType">
+	<xsd:restriction base="ValueIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash256GenDispenserTenantIdType">
+	<xsd:restriction base="TenantIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash256GenDispenserIdType">
+	<xsd:restriction base="ScopeIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash256GenDispenserType">
+	<xsd:restriction base="NameTypeType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash256GenSliceType">
+	<xsd:restriction base="xsd:short"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash256GenBlockSizeType">
+	<xsd:restriction base="xsd:integer"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash256GenRevisionType">
+	<xsd:restriction base="xsd:integer"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash256TypeTenantIdType">
+	<xsd:restriction base="TenantIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash256TypeIdType">
+	<xsd:restriction base="ValueIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash256TypeSchemaDefIdType">
+	<xsd:restriction base="ScopeIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash256TypeRevisionType">
+	<xsd:restriction base="xsd:integer"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash384ColTenantIdType">
+	<xsd:restriction base="TenantIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash384ColIdType">
+	<xsd:restriction base="ValueIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash384ColTableIdType">
+	<xsd:restriction base="ScopeIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash384ColRevisionType">
+	<xsd:restriction base="xsd:integer"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash384DefTenantIdType">
+	<xsd:restriction base="TenantIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash384DefIdType">
+	<xsd:restriction base="ValueIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash384DefInitValueType">
+	<xsd:restriction base="xsd:string"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash384DefRevisionType">
+	<xsd:restriction base="xsd:integer"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash384GenTenantIdType">
+	<xsd:restriction base="TenantIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash384GenIdType">
+	<xsd:restriction base="ValueIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash384GenDispenserTenantIdType">
+	<xsd:restriction base="TenantIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash384GenDispenserIdType">
+	<xsd:restriction base="ScopeIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash384GenDispenserType">
+	<xsd:restriction base="NameTypeType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash384GenSliceType">
+	<xsd:restriction base="xsd:short"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash384GenBlockSizeType">
+	<xsd:restriction base="xsd:integer"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash384GenRevisionType">
+	<xsd:restriction base="xsd:integer"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash384TypeTenantIdType">
+	<xsd:restriction base="TenantIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash384TypeIdType">
+	<xsd:restriction base="ValueIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash384TypeSchemaDefIdType">
+	<xsd:restriction base="ScopeIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash384TypeRevisionType">
+	<xsd:restriction base="xsd:integer"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash512ColTenantIdType">
+	<xsd:restriction base="TenantIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash512ColIdType">
+	<xsd:restriction base="ValueIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash512ColTableIdType">
+	<xsd:restriction base="ScopeIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash512ColRevisionType">
+	<xsd:restriction base="xsd:integer"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash512DefTenantIdType">
+	<xsd:restriction base="TenantIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash512DefIdType">
+	<xsd:restriction base="ValueIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash512DefInitValueType">
+	<xsd:restriction base="xsd:string"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash512DefRevisionType">
+	<xsd:restriction base="xsd:integer"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash512GenTenantIdType">
+	<xsd:restriction base="TenantIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash512GenIdType">
+	<xsd:restriction base="ValueIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash512GenDispenserTenantIdType">
+	<xsd:restriction base="TenantIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash512GenDispenserIdType">
+	<xsd:restriction base="ScopeIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash512GenDispenserType">
+	<xsd:restriction base="NameTypeType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash512GenSliceType">
+	<xsd:restriction base="xsd:short"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash512GenBlockSizeType">
+	<xsd:restriction base="xsd:integer"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash512GenRevisionType">
+	<xsd:restriction base="xsd:integer"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash512TypeTenantIdType">
+	<xsd:restriction base="TenantIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash512TypeIdType">
+	<xsd:restriction base="ValueIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash512TypeSchemaDefIdType">
+	<xsd:restriction base="ScopeIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="DbKeyHash512TypeRevisionType">
+	<xsd:restriction base="xsd:integer"/>
+</xsd:simpleType>
+
 <xsd:simpleType name="ValueTenantIdType">
 	<xsd:restriction base="TenantIdGenType"/>
 </xsd:simpleType>
@@ -4544,6 +5104,20 @@
 					<xsd:element name="TZTimestampType" type="TZTimestampTypeObjType" />
 					<xsd:element name="UuidType" type="UuidTypeObjType" />
 					<xsd:element name="UuidGen" type="UuidGenObjType" />
+					<xsd:element name="Uuid6Type" type="Uuid6TypeObjType" />
+					<xsd:element name="Uuid6Gen" type="Uuid6GenObjType" />
+					<xsd:element name="DbKeyHash128Type" type="DbKeyHash128TypeObjType" />
+					<xsd:element name="DbKeyHash128Gen" type="DbKeyHash128GenObjType" />
+					<xsd:element name="DbKeyHash160Type" type="DbKeyHash160TypeObjType" />
+					<xsd:element name="DbKeyHash160Gen" type="DbKeyHash160GenObjType" />
+					<xsd:element name="DbKeyHash224Type" type="DbKeyHash224TypeObjType" />
+					<xsd:element name="DbKeyHash224Gen" type="DbKeyHash224GenObjType" />
+					<xsd:element name="DbKeyHash256Type" type="DbKeyHash256TypeObjType" />
+					<xsd:element name="DbKeyHash256Gen" type="DbKeyHash256GenObjType" />
+					<xsd:element name="DbKeyHash384Type" type="DbKeyHash384TypeObjType" />
+					<xsd:element name="DbKeyHash384Gen" type="DbKeyHash384GenObjType" />
+					<xsd:element name="DbKeyHash512Type" type="DbKeyHash512TypeObjType" />
+					<xsd:element name="DbKeyHash512Gen" type="DbKeyHash512GenObjType" />
 					<xsd:element name="CommonLicense" type="TextAttrEltType" />
 					<xsd:element name="ClientImplLicense" type="TextAttrEltType" />
 					<xsd:element name="ClientXFaceLicense" type="TextAttrEltType" />
@@ -4779,6 +5353,13 @@
 					<xsd:element name="TZTimeCol" type="TZTimeColObjType" />
 					<xsd:element name="TZTimestampCol" type="TZTimestampColObjType" />
 					<xsd:element name="UuidCol" type="UuidColObjType" />
+					<xsd:element name="Uuid6Col" type="Uuid6ColObjType" />
+					<xsd:element name="DbKeyHash128Col" type="DbKeyHash128ColObjType" />
+					<xsd:element name="DbKeyHash160Col" type="DbKeyHash160ColObjType" />
+					<xsd:element name="DbKeyHash224Col" type="DbKeyHash224ColObjType" />
+					<xsd:element name="DbKeyHash256Col" type="DbKeyHash256ColObjType" />
+					<xsd:element name="DbKeyHash384Col" type="DbKeyHash384ColObjType" />
+					<xsd:element name="DbKeyHash512Col" type="DbKeyHash512ColObjType" />
 					<xsd:element name="Index" type="IndexObjType" />
 					<xsd:element name="PrimaryIndex" type="PrimaryIndexObjType" />
 					<xsd:element name="Chain" type="ChainObjType" />
@@ -6184,6 +6765,356 @@
 			<xsd:attribute name="Dispenser" type="UuidGenDispenserType" use="optional"/>
 			<xsd:attribute name="Slice" type="UuidGenSliceType" use="required"/>
 			<xsd:attribute name="BlockSize" type="UuidGenBlockSizeType" use="required"/>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="Uuid6DefObjType" mixed="true">
+	<xsd:complexContent>
+		<xsd:extension base="AtomObjType">
+			<xsd:sequence>
+				<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				</xsd:choice>
+			</xsd:sequence>
+			<xsd:attribute name="InitValue" type="Uuid6DefInitValueType" use="optional"/>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="Uuid6ColObjType" mixed="true">
+	<xsd:complexContent>
+		<xsd:extension base="Uuid6DefObjType">
+			<xsd:sequence>
+				<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				</xsd:choice>
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="Uuid6TypeObjType" mixed="true">
+	<xsd:complexContent>
+		<xsd:extension base="Uuid6DefObjType">
+			<xsd:sequence>
+				<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				</xsd:choice>
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="Uuid6GenObjType" mixed="true">
+	<xsd:complexContent>
+		<xsd:extension base="Uuid6TypeObjType">
+			<xsd:sequence>
+				<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				</xsd:choice>
+			</xsd:sequence>
+			<xsd:attribute name="DispenserTenantId" type="Uuid6GenDispenserTenantIdType" use="optional"/>
+			<xsd:attribute name="DispenserId" type="Uuid6GenDispenserIdType" use="optional"/>
+			<xsd:attribute name="Dispenser" type="Uuid6GenDispenserType" use="optional"/>
+			<xsd:attribute name="Slice" type="Uuid6GenSliceType" use="required"/>
+			<xsd:attribute name="BlockSize" type="Uuid6GenBlockSizeType" use="required"/>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="DbKeyHash128DefObjType" mixed="true">
+	<xsd:complexContent>
+		<xsd:extension base="AtomObjType">
+			<xsd:sequence>
+				<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				</xsd:choice>
+			</xsd:sequence>
+			<xsd:attribute name="InitValue" type="DbKeyHash128DefInitValueType" use="optional"/>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="DbKeyHash128ColObjType" mixed="true">
+	<xsd:complexContent>
+		<xsd:extension base="DbKeyHash128DefObjType">
+			<xsd:sequence>
+				<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				</xsd:choice>
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="DbKeyHash128TypeObjType" mixed="true">
+	<xsd:complexContent>
+		<xsd:extension base="DbKeyHash128DefObjType">
+			<xsd:sequence>
+				<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				</xsd:choice>
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="DbKeyHash128GenObjType" mixed="true">
+	<xsd:complexContent>
+		<xsd:extension base="DbKeyHash128TypeObjType">
+			<xsd:sequence>
+				<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				</xsd:choice>
+			</xsd:sequence>
+			<xsd:attribute name="DispenserTenantId" type="DbKeyHash128GenDispenserTenantIdType" use="optional"/>
+			<xsd:attribute name="DispenserId" type="DbKeyHash128GenDispenserIdType" use="optional"/>
+			<xsd:attribute name="Dispenser" type="DbKeyHash128GenDispenserType" use="optional"/>
+			<xsd:attribute name="Slice" type="DbKeyHash128GenSliceType" use="required"/>
+			<xsd:attribute name="BlockSize" type="DbKeyHash128GenBlockSizeType" use="required"/>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="DbKeyHash160DefObjType" mixed="true">
+	<xsd:complexContent>
+		<xsd:extension base="AtomObjType">
+			<xsd:sequence>
+				<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				</xsd:choice>
+			</xsd:sequence>
+			<xsd:attribute name="InitValue" type="DbKeyHash160DefInitValueType" use="optional"/>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="DbKeyHash160ColObjType" mixed="true">
+	<xsd:complexContent>
+		<xsd:extension base="DbKeyHash160DefObjType">
+			<xsd:sequence>
+				<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				</xsd:choice>
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="DbKeyHash160TypeObjType" mixed="true">
+	<xsd:complexContent>
+		<xsd:extension base="DbKeyHash160DefObjType">
+			<xsd:sequence>
+				<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				</xsd:choice>
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="DbKeyHash160GenObjType" mixed="true">
+	<xsd:complexContent>
+		<xsd:extension base="DbKeyHash160TypeObjType">
+			<xsd:sequence>
+				<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				</xsd:choice>
+			</xsd:sequence>
+			<xsd:attribute name="DispenserTenantId" type="DbKeyHash160GenDispenserTenantIdType" use="optional"/>
+			<xsd:attribute name="DispenserId" type="DbKeyHash160GenDispenserIdType" use="optional"/>
+			<xsd:attribute name="Dispenser" type="DbKeyHash160GenDispenserType" use="optional"/>
+			<xsd:attribute name="Slice" type="DbKeyHash160GenSliceType" use="required"/>
+			<xsd:attribute name="BlockSize" type="DbKeyHash160GenBlockSizeType" use="required"/>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="DbKeyHash224DefObjType" mixed="true">
+	<xsd:complexContent>
+		<xsd:extension base="AtomObjType">
+			<xsd:sequence>
+				<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				</xsd:choice>
+			</xsd:sequence>
+			<xsd:attribute name="InitValue" type="DbKeyHash224DefInitValueType" use="optional"/>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="DbKeyHash224ColObjType" mixed="true">
+	<xsd:complexContent>
+		<xsd:extension base="DbKeyHash224DefObjType">
+			<xsd:sequence>
+				<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				</xsd:choice>
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="DbKeyHash224TypeObjType" mixed="true">
+	<xsd:complexContent>
+		<xsd:extension base="DbKeyHash224DefObjType">
+			<xsd:sequence>
+				<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				</xsd:choice>
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="DbKeyHash224GenObjType" mixed="true">
+	<xsd:complexContent>
+		<xsd:extension base="DbKeyHash224TypeObjType">
+			<xsd:sequence>
+				<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				</xsd:choice>
+			</xsd:sequence>
+			<xsd:attribute name="DispenserTenantId" type="DbKeyHash224GenDispenserTenantIdType" use="optional"/>
+			<xsd:attribute name="DispenserId" type="DbKeyHash224GenDispenserIdType" use="optional"/>
+			<xsd:attribute name="Dispenser" type="DbKeyHash224GenDispenserType" use="optional"/>
+			<xsd:attribute name="Slice" type="DbKeyHash224GenSliceType" use="required"/>
+			<xsd:attribute name="BlockSize" type="DbKeyHash224GenBlockSizeType" use="required"/>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="DbKeyHash256DefObjType" mixed="true">
+	<xsd:complexContent>
+		<xsd:extension base="AtomObjType">
+			<xsd:sequence>
+				<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				</xsd:choice>
+			</xsd:sequence>
+			<xsd:attribute name="InitValue" type="DbKeyHash256DefInitValueType" use="optional"/>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="DbKeyHash256ColObjType" mixed="true">
+	<xsd:complexContent>
+		<xsd:extension base="DbKeyHash256DefObjType">
+			<xsd:sequence>
+				<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				</xsd:choice>
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="DbKeyHash256TypeObjType" mixed="true">
+	<xsd:complexContent>
+		<xsd:extension base="DbKeyHash256DefObjType">
+			<xsd:sequence>
+				<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				</xsd:choice>
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="DbKeyHash256GenObjType" mixed="true">
+	<xsd:complexContent>
+		<xsd:extension base="DbKeyHash256TypeObjType">
+			<xsd:sequence>
+				<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				</xsd:choice>
+			</xsd:sequence>
+			<xsd:attribute name="DispenserTenantId" type="DbKeyHash256GenDispenserTenantIdType" use="optional"/>
+			<xsd:attribute name="DispenserId" type="DbKeyHash256GenDispenserIdType" use="optional"/>
+			<xsd:attribute name="Dispenser" type="DbKeyHash256GenDispenserType" use="optional"/>
+			<xsd:attribute name="Slice" type="DbKeyHash256GenSliceType" use="required"/>
+			<xsd:attribute name="BlockSize" type="DbKeyHash256GenBlockSizeType" use="required"/>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="DbKeyHash384DefObjType" mixed="true">
+	<xsd:complexContent>
+		<xsd:extension base="AtomObjType">
+			<xsd:sequence>
+				<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				</xsd:choice>
+			</xsd:sequence>
+			<xsd:attribute name="InitValue" type="DbKeyHash384DefInitValueType" use="optional"/>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="DbKeyHash384ColObjType" mixed="true">
+	<xsd:complexContent>
+		<xsd:extension base="DbKeyHash384DefObjType">
+			<xsd:sequence>
+				<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				</xsd:choice>
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="DbKeyHash384TypeObjType" mixed="true">
+	<xsd:complexContent>
+		<xsd:extension base="DbKeyHash384DefObjType">
+			<xsd:sequence>
+				<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				</xsd:choice>
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="DbKeyHash384GenObjType" mixed="true">
+	<xsd:complexContent>
+		<xsd:extension base="DbKeyHash384TypeObjType">
+			<xsd:sequence>
+				<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				</xsd:choice>
+			</xsd:sequence>
+			<xsd:attribute name="DispenserTenantId" type="DbKeyHash384GenDispenserTenantIdType" use="optional"/>
+			<xsd:attribute name="DispenserId" type="DbKeyHash384GenDispenserIdType" use="optional"/>
+			<xsd:attribute name="Dispenser" type="DbKeyHash384GenDispenserType" use="optional"/>
+			<xsd:attribute name="Slice" type="DbKeyHash384GenSliceType" use="required"/>
+			<xsd:attribute name="BlockSize" type="DbKeyHash384GenBlockSizeType" use="required"/>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="DbKeyHash512DefObjType" mixed="true">
+	<xsd:complexContent>
+		<xsd:extension base="AtomObjType">
+			<xsd:sequence>
+				<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				</xsd:choice>
+			</xsd:sequence>
+			<xsd:attribute name="InitValue" type="DbKeyHash512DefInitValueType" use="optional"/>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="DbKeyHash512ColObjType" mixed="true">
+	<xsd:complexContent>
+		<xsd:extension base="DbKeyHash512DefObjType">
+			<xsd:sequence>
+				<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				</xsd:choice>
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="DbKeyHash512TypeObjType" mixed="true">
+	<xsd:complexContent>
+		<xsd:extension base="DbKeyHash512DefObjType">
+			<xsd:sequence>
+				<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				</xsd:choice>
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="DbKeyHash512GenObjType" mixed="true">
+	<xsd:complexContent>
+		<xsd:extension base="DbKeyHash512TypeObjType">
+			<xsd:sequence>
+				<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				</xsd:choice>
+			</xsd:sequence>
+			<xsd:attribute name="DispenserTenantId" type="DbKeyHash512GenDispenserTenantIdType" use="optional"/>
+			<xsd:attribute name="DispenserId" type="DbKeyHash512GenDispenserIdType" use="optional"/>
+			<xsd:attribute name="Dispenser" type="DbKeyHash512GenDispenserType" use="optional"/>
+			<xsd:attribute name="Slice" type="DbKeyHash512GenSliceType" use="required"/>
+			<xsd:attribute name="BlockSize" type="DbKeyHash512GenBlockSizeType" use="required"/>
 		</xsd:extension>
 	</xsd:complexContent>
 </xsd:complexType>
