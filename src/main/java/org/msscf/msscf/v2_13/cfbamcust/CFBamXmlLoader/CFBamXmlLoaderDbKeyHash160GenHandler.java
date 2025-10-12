@@ -365,6 +365,9 @@ public class CFBamXmlLoaderDbKeyHash160GenHandler
 			editBuff.setOptionalInitValue( natInitValue.toString() );
 			// editBuff.setOptionalInitValue(attrInitValue);
 
+			short natSlice = Short.parseShort( attrSlice );
+			editBuff.setRequiredSlice( natSlice );
+
 			int natBlockSize = Integer.parseInt( attrBlockSize );
 			editBuff.setRequiredBlockSize( natBlockSize );
 

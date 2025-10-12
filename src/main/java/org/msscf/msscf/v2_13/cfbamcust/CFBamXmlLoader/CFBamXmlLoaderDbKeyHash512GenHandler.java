@@ -31,6 +31,7 @@ import java.sql.*;
 import java.text.*;
 import java.util.*;
 import org.msscf.msscf.v2_13.cflib.CFLib.*;
+import org.msscf.msscf.v2_13.cflib.CFLib.dbutil.CFLibDbKeyHash512;
 import org.msscf.msscf.v2_13.cflib.CFLib.xml.*;
 import org.apache.commons.codec.binary.Base64;
 import org.xml.sax.*;
@@ -72,15 +73,18 @@ public class CFBamXmlLoaderDbKeyHash512GenHandler
 			// Atom Attributes
 			String	attrDbName = null;
 			// Atom References
-			// UuidDef Attributes
+			// DbKeyHash512Def Attributes
 			String	attrInitValue = null;
-			// UuidDef References
-			// UuidType Attributes
-			// UuidType References
+			// DbKeyHash512Def References
+			// DbKeyHash512Type Attributes
+			// DbKeyHash512Type References
 			ICFBamSchemaDefObj refSchemaDef = null;
 			// DbKeyHash512Gen Attributes
+			String	attrSlice = null;
 			String	attrBlockSize = null;
+			String	attrDispenser = null;
 			// DbKeyHash512Gen References
+			ICFBamTableObj refDispenser = null;
 			// Attribute Extraction
 			String	attrLocalName;
 			int		numAttrs;
@@ -203,6 +207,15 @@ public class CFBamXmlLoaderDbKeyHash512GenHandler
 					}
 					attrInitValue = attrs.getValue( idxAttr );
 				}
+				else if( attrLocalName.equals( "Slice" ) ) {
+					if( attrSlice != null ) {
+						throw new CFLibUniqueIndexViolationException( getClass(),
+							S_ProcName,
+							S_LocalName,
+							attrLocalName );
+					}
+					attrSlice = attrs.getValue( idxAttr );
+				}
 				else if( attrLocalName.equals( "BlockSize" ) ) {
 					if( attrBlockSize != null ) {
 						throw new CFLibUniqueIndexViolationException( getClass(),
@@ -211,6 +224,15 @@ public class CFBamXmlLoaderDbKeyHash512GenHandler
 							attrLocalName );
 					}
 					attrBlockSize = attrs.getValue( idxAttr );
+				}
+				else if( attrLocalName.equals( "Dispenser" ) ) {
+					if( attrDispenser != null ) {
+						throw new CFLibUniqueIndexViolationException( getClass(),
+							S_ProcName,
+							S_LocalName,
+							attrLocalName );
+					}
+					attrDispenser = attrs.getValue( idxAttr );
 				}
 				else if( attrLocalName.equals( "schemaLocation" ) ) {
 					// ignored
@@ -236,6 +258,18 @@ public class CFBamXmlLoaderDbKeyHash512GenHandler
 					0,
 					"IsNullable" );
 			}
+			if( ( attrSlice == null ) || ( attrSlice.length() <= 0 ) ) {
+				throw new CFLibNullArgumentException( getClass(),
+					S_ProcName,
+					0,
+					"Slice" );
+			}
+			if( ( attrBlockSize == null ) || ( attrBlockSize.length() <= 0 ) ) {
+				throw new CFLibNullArgumentException( getClass(),
+					S_ProcName,
+					0,
+					"BlockSize" );
+			}
 			if( ( attrBlockSize == null ) || ( attrBlockSize.length() <= 0 ) ) {
 				throw new CFLibNullArgumentException( getClass(),
 					S_ProcName,
@@ -260,6 +294,7 @@ public class CFBamXmlLoaderDbKeyHash512GenHandler
 			curContext.putNamedValue( "DbName", attrDbName );
 			curContext.putNamedValue( "InitValue", attrInitValue );
 			curContext.putNamedValue( "BlockSize", attrBlockSize );
+			curContext.putNamedValue( "Dispenser", attrDispenser );
 
 			// Convert string attributes to native Cafe types
 			// and apply the converted attributes to the editBuff.
@@ -320,15 +355,18 @@ public class CFBamXmlLoaderDbKeyHash512GenHandler
 			String natDbName = attrDbName;
 			editBuff.setOptionalDbName( natDbName );
 
-			//	CFLibDbKeyHash512 natInitValue;
-			//	if( ( attrInitValue == null ) || ( attrInitValue.length() <= 0 ) ) {
-			//		natInitValue = null;
-			//	}
-			//	else {
-			//		natInitValue = CFLibDbKeyHash512.fromHex( attrInitValue );
-			//	}
-			//	editBuff.setOptionalInitValue( natInitValue );
-			editBuff.setOptionalInitValue(attrInitValue);
+			CFLibDbKeyHash512 natInitValue;
+			if( ( attrInitValue == null ) || ( attrInitValue.length() <= 0 ) ) {
+				natInitValue = CFLibDbKeyHash512.nullGet();
+			}
+			else {
+				natInitValue = CFLibDbKeyHash512.fromHex( attrInitValue );
+			}
+			editBuff.setOptionalInitValue( natInitValue.toString() );
+			// editBuff.setOptionalInitValue(attrInitValue);
+
+			short natSlice = Short.parseShort( attrSlice );
+			editBuff.setRequiredSlice( natSlice );
 
 			int natBlockSize = Integer.parseInt( attrBlockSize );
 			editBuff.setRequiredBlockSize( natBlockSize );
@@ -345,6 +383,7 @@ public class CFBamXmlLoaderDbKeyHash512GenHandler
 			}
 
 			// Resolve and apply required Container reference
+			// Resolve and apply Owner reference
 
 			if( scopeObj == null ) {
 				throw new CFLibNullArgumentException( getClass(),
@@ -356,6 +395,7 @@ public class CFBamXmlLoaderDbKeyHash512GenHandler
 				refSchemaDef = (ICFBamSchemaDefObj) scopeObj;
 				editBuff.setRequiredContainerSchemaDef( refSchemaDef );
 				refTenant = (ICFBamTenantObj)editBuff.getRequiredOwnerTenant();
+				editBuff.setRequiredOwnerTenant( refTenant );
 			}
 			else {
 				throw new CFLibUnsupportedClassException( getClass(),
@@ -365,22 +405,25 @@ public class CFBamXmlLoaderDbKeyHash512GenHandler
 					"ICFBamSchemaDefObj" );
 			}
 
-			// Resolve and apply Owner reference
+			refScope = refSchemaDef;
 
-			if( refTenant == null ) {
-				if( scopeObj instanceof ICFBamTenantObj ) {
-					refTenant = (ICFBamTenantObj) scopeObj;
-					editBuff.setRequiredOwnerTenant( refTenant );
-				}
-				else {
+			// Lookup refDispenser by qualified name
+
+			if( ( attrDispenser != null ) && ( attrDispenser.length() > 0 ) ) {
+				refDispenser = schemaObj.getTableTableObj().readTableByUNameIdx( refSchemaDef.getRequiredTenantId(),
+					refSchemaDef.getRequiredId(),
+					attrDispenser );
+				if( refDispenser == null ) {
 					throw new CFLibNullArgumentException( getClass(),
 						S_ProcName,
 						0,
-						"Owner<Tenant>" );
+						"Resolve Dispenser reference qualified name \"" + attrDispenser + "\" to table Table" );
 				}
 			}
-
-			refScope = refSchemaDef;
+			else {
+				refDispenser = null;
+			}
+			editBuff.setOptionalLookupDispenser( refDispenser );
 
 			ICFBamDbKeyHash512GenEditObj editDbKeyHash512Gen = editBuff;
 			ICFBamDbKeyHash512GenObj origDbKeyHash512Gen = (ICFBamDbKeyHash512GenObj)editDbKeyHash512Gen.create();
