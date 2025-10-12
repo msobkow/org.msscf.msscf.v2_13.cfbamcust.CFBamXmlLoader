@@ -1,5 +1,5 @@
 <?xml version="1.1" encoding="UTF-8" standalone="no"?>
-<xsd:schema xmlns="http://msscf.org/msscf/2.0.13/xsd/mssbam-2.13" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://msscf.org/msscf/2.0.13/xsd/mssbam-2.13" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.13">
+<xsd:schema xmlns="http://msscf.org:8088/msscf/2.0.13/xsd/mssbam-2.13.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://msscf.org:8088/msscf/2.0.13/xsd/mssbam-2.13.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.13">
 
 <xsd:annotation>
 	<xsd:documentation xml:lang="en">
