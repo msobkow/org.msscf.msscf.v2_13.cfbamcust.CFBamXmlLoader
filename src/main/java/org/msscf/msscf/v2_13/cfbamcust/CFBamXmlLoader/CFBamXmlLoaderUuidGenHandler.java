@@ -31,6 +31,7 @@ import java.sql.*;
 import java.text.*;
 import java.util.*;
 import org.msscf.msscf.v2_13.cflib.CFLib.*;
+import org.msscf.msscf.v2_13.cflib.CFLib.dbutil.CFLibUuid6;
 import org.msscf.msscf.v2_13.cflib.CFLib.xml.*;
 import org.apache.commons.codec.binary.Base64;
 import org.xml.sax.*;
@@ -81,7 +82,9 @@ public class CFBamXmlLoaderUuidGenHandler
 			// UuidGen Attributes
 			String	attrSlice = null;
 			String	attrBlockSize = null;
+			String	attrDispenser = null;
 			// UuidGen References
+			ICFBamTableObj refDispenser = null;
 			// Attribute Extraction
 			String	attrLocalName;
 			int		numAttrs;
@@ -222,6 +225,15 @@ public class CFBamXmlLoaderUuidGenHandler
 					}
 					attrBlockSize = attrs.getValue( idxAttr );
 				}
+				else if( attrLocalName.equals( "Dispenser" ) ) {
+					if( attrDispenser != null ) {
+						throw new CFLibUniqueIndexViolationException( getClass(),
+							S_ProcName,
+							S_LocalName,
+							attrLocalName );
+					}
+					attrDispenser = attrs.getValue( idxAttr );
+				}
 				else if( attrLocalName.equals( "schemaLocation" ) ) {
 					// ignored
 				}
@@ -277,6 +289,7 @@ public class CFBamXmlLoaderUuidGenHandler
 			curContext.putNamedValue( "InitValue", attrInitValue );
 			curContext.putNamedValue( "Slice", attrSlice );
 			curContext.putNamedValue( "BlockSize", attrBlockSize );
+			curContext.putNamedValue( "Dispenser", attrDispenser );
 
 			// Convert string attributes to native Cafe types
 			// and apply the converted attributes to the editBuff.
@@ -364,6 +377,7 @@ public class CFBamXmlLoaderUuidGenHandler
 			}
 
 			// Resolve and apply required Container reference
+			// Resolve and apply Owner reference
 
 			if( scopeObj == null ) {
 				throw new CFLibNullArgumentException( getClass(),
@@ -375,6 +389,7 @@ public class CFBamXmlLoaderUuidGenHandler
 				refSchemaDef = (ICFBamSchemaDefObj) scopeObj;
 				editBuff.setRequiredContainerSchemaDef( refSchemaDef );
 				refTenant = (ICFBamTenantObj)editBuff.getRequiredOwnerTenant();
+				editBuff.setRequiredOwnerTenant( refTenant );
 			}
 			else {
 				throw new CFLibUnsupportedClassException( getClass(),
@@ -384,22 +399,25 @@ public class CFBamXmlLoaderUuidGenHandler
 					"ICFBamSchemaDefObj" );
 			}
 
-			// Resolve and apply Owner reference
+			refScope = refSchemaDef;
 
-			if( refTenant == null ) {
-				if( scopeObj instanceof ICFBamTenantObj ) {
-					refTenant = (ICFBamTenantObj) scopeObj;
-					editBuff.setRequiredOwnerTenant( refTenant );
-				}
-				else {
+			// Lookup refDispenser by qualified name
+
+			if( ( attrDispenser != null ) && ( attrDispenser.length() > 0 ) ) {
+				refDispenser = schemaObj.getTableTableObj().readTableByUNameIdx( refSchemaDef.getRequiredTenantId(),
+					refSchemaDef.getRequiredId(),
+					attrDispenser );
+				if( refDispenser == null ) {
 					throw new CFLibNullArgumentException( getClass(),
 						S_ProcName,
 						0,
-						"Owner<Tenant>" );
+						"Resolve Dispenser reference qualified name \"" + attrDispenser + "\" to table Table" );
 				}
 			}
-
-			refScope = refSchemaDef;
+			else {
+				refDispenser = null;
+			}
+			editBuff.setOptionalLookupDispenser( refDispenser );
 
 			ICFBamUuidGenEditObj editUuidGen = editBuff;
 			ICFBamUuidGenObj origUuidGen = (ICFBamUuidGenObj)editUuidGen.create();

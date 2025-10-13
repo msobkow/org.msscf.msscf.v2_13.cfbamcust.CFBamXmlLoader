@@ -270,12 +270,6 @@ public class CFBamXmlLoaderDbKeyHash160GenHandler
 					0,
 					"BlockSize" );
 			}
-			if( ( attrBlockSize == null ) || ( attrBlockSize.length() <= 0 ) ) {
-				throw new CFLibNullArgumentException( getClass(),
-					S_ProcName,
-					0,
-					"BlockSize" );
-			}
 
 			// Save named attributes to context
 			CFLibXmlCoreContext curContext = getParser().getCurContext();
@@ -293,6 +287,7 @@ public class CFBamXmlLoaderDbKeyHash160GenHandler
 			curContext.putNamedValue( "GenerateId", attrGenerateId );
 			curContext.putNamedValue( "DbName", attrDbName );
 			curContext.putNamedValue( "InitValue", attrInitValue );
+			curContext.putNamedValue( "Slice", attrSlice );
 			curContext.putNamedValue( "BlockSize", attrBlockSize );
 			curContext.putNamedValue( "Dispenser", attrDispenser );
 
