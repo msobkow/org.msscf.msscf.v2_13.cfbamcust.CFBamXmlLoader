@@ -269,12 +269,29 @@ public class CFBamXmlLoaderSchemaRefHandler
 					ICFBamUuidGenObj dstOrigGenDef = GenTableObj.readUuidGenByUNameIdx( dst.getRequiredTenantId(), dst.getRequiredId(), srcGenDef.getRequiredName() );
 					if( dstOrigGenDef == null ) {
 
+						srcDispenser = srcGenDef.getOptionalLookupDispenser();
+						if( srcDispenser != null ) {
+							dstDispenser = dstTableTableObj.readTableByUNameIdx( dst.getRequiredTenantId(),
+								dst.getRequiredId(),
+								srcDispenser.getRequiredName() );
+							if( dstDispenser == null ) {
+								throw new CFLibNullArgumentException( getClass(),
+									S_ProcName,
+									0,
+									"dstDispenser " + srcDispenser.getRequiredName() );
+							}
+						}
+						else {
+							dstDispenser = null;
+						}
+
 						dstOrigGenDef = GenTableObj.newInstance();
 						ICFBamUuidGenEditObj dstEditGenDef = (ICFBamUuidGenEditObj)dstOrigGenDef.beginEdit();
 						dstEditGenDef.setRequiredOwnerTenant( dst.getRequiredOwnerTenant() );
 						dstEditGenDef.setRequiredContainerSchemaDef( dst );
 						dstEditGenDef.setRequiredIsNullable( srcGenDef.getRequiredIsNullable() );
 						dstEditGenDef.setRequiredName( srcGenDef.getRequiredName() );
+						dstEditGenDef.setOptionalLookupDispenser( dstDispenser );
 						dstEditGenDef.setRequiredSlice( srcGenDef.getRequiredSlice() );
 						dstEditGenDef.setOptionalDbName( srcGenDef.getOptionalDbName() );
 						dstEditGenDef.setOptionalDescription( srcGenDef.getOptionalDescription() );
@@ -288,6 +305,321 @@ public class CFBamXmlLoaderSchemaRefHandler
 						}
 						dstEditGenDef.setOptionalLookupDefSchema( lookupSchema );
 						dstOrigGenDef = (ICFBamUuidGenObj)dstEditGenDef.create();
+						dstEditGenDef = null;
+					}
+				}
+				else if( value instanceof ICFBamUuid6GenObj ) {
+					ICFBamUuid6GenTableObj GenTableObj = dst.getSchema().getUuid6GenTableObj();
+					ICFBamUuid6GenObj srcGenDef = (ICFBamUuid6GenObj)value;
+					ICFBamUuid6GenObj dstOrigGenDef = GenTableObj.readUuid6GenByUNameIdx( dst.getRequiredTenantId(), dst.getRequiredId(), srcGenDef.getRequiredName() );
+					if( dstOrigGenDef == null ) {
+
+						srcDispenser = srcGenDef.getOptionalLookupDispenser();
+						if( srcDispenser != null ) {
+							dstDispenser = dstTableTableObj.readTableByUNameIdx( dst.getRequiredTenantId(),
+								dst.getRequiredId(),
+								srcDispenser.getRequiredName() );
+							if( dstDispenser == null ) {
+								throw new CFLibNullArgumentException( getClass(),
+									S_ProcName,
+									0,
+									"dstDispenser " + srcDispenser.getRequiredName() );
+							}
+						}
+						else {
+							dstDispenser = null;
+						}
+
+						dstOrigGenDef = GenTableObj.newInstance();
+						ICFBamUuid6GenEditObj dstEditGenDef = (ICFBamUuid6GenEditObj)dstOrigGenDef.beginEdit();
+						dstEditGenDef.setRequiredOwnerTenant( dst.getRequiredOwnerTenant() );
+						dstEditGenDef.setRequiredContainerSchemaDef( dst );
+						dstEditGenDef.setRequiredIsNullable( srcGenDef.getRequiredIsNullable() );
+						dstEditGenDef.setRequiredName( srcGenDef.getRequiredName() );
+						dstEditGenDef.setOptionalLookupDispenser( dstDispenser );
+						dstEditGenDef.setRequiredSlice( srcGenDef.getRequiredSlice() );
+						dstEditGenDef.setOptionalDbName( srcGenDef.getOptionalDbName() );
+						dstEditGenDef.setOptionalDescription( srcGenDef.getOptionalDescription() );
+						dstEditGenDef.setOptionalInitValue( srcGenDef.getOptionalInitValue() );
+						dstEditGenDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
+						dstEditGenDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
+						dstEditGenDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
+						if( lookupSchema == null ) {
+							lookupSchema = src;
+						}
+						dstEditGenDef.setOptionalLookupDefSchema( lookupSchema );
+						dstOrigGenDef = (ICFBamUuid6GenObj)dstEditGenDef.create();
+						dstEditGenDef = null;
+					}
+				}
+				else if( value instanceof ICFBamDbKeyHash128GenObj ) {
+					ICFBamDbKeyHash128GenTableObj GenTableObj = dst.getSchema().getDbKeyHash128GenTableObj();
+					ICFBamDbKeyHash128GenObj srcGenDef = (ICFBamDbKeyHash128GenObj)value;
+					ICFBamDbKeyHash128GenObj dstOrigGenDef = GenTableObj.readDbKeyHash128GenByUNameIdx( dst.getRequiredTenantId(), dst.getRequiredId(), srcGenDef.getRequiredName() );
+					if( dstOrigGenDef == null ) {
+
+						srcDispenser = srcGenDef.getOptionalLookupDispenser();
+						if( srcDispenser != null ) {
+							dstDispenser = dstTableTableObj.readTableByUNameIdx( dst.getRequiredTenantId(),
+								dst.getRequiredId(),
+								srcDispenser.getRequiredName() );
+							if( dstDispenser == null ) {
+								throw new CFLibNullArgumentException( getClass(),
+									S_ProcName,
+									0,
+									"dstDispenser " + srcDispenser.getRequiredName() );
+							}
+						}
+						else {
+							dstDispenser = null;
+						}
+
+						dstOrigGenDef = GenTableObj.newInstance();
+						ICFBamDbKeyHash128GenEditObj dstEditGenDef = (ICFBamDbKeyHash128GenEditObj)dstOrigGenDef.beginEdit();
+						dstEditGenDef.setRequiredOwnerTenant( dst.getRequiredOwnerTenant() );
+						dstEditGenDef.setRequiredContainerSchemaDef( dst );
+						dstEditGenDef.setRequiredIsNullable( srcGenDef.getRequiredIsNullable() );
+						dstEditGenDef.setRequiredName( srcGenDef.getRequiredName() );
+						dstEditGenDef.setOptionalLookupDispenser( dstDispenser );
+						dstEditGenDef.setRequiredSlice( srcGenDef.getRequiredSlice() );
+						dstEditGenDef.setOptionalDbName( srcGenDef.getOptionalDbName() );
+						dstEditGenDef.setOptionalDescription( srcGenDef.getOptionalDescription() );
+						dstEditGenDef.setOptionalInitValue( srcGenDef.getOptionalInitValue() );
+						dstEditGenDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
+						dstEditGenDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
+						dstEditGenDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
+						if( lookupSchema == null ) {
+							lookupSchema = src;
+						}
+						dstEditGenDef.setOptionalLookupDefSchema( lookupSchema );
+						dstOrigGenDef = (ICFBamDbKeyHash128GenObj)dstEditGenDef.create();
+						dstEditGenDef = null;
+					}
+				}
+				else if( value instanceof ICFBamDbKeyHash160GenObj ) {
+					ICFBamDbKeyHash160GenTableObj GenTableObj = dst.getSchema().getDbKeyHash160GenTableObj();
+					ICFBamDbKeyHash160GenObj srcGenDef = (ICFBamDbKeyHash160GenObj)value;
+					ICFBamDbKeyHash160GenObj dstOrigGenDef = GenTableObj.readDbKeyHash160GenByUNameIdx( dst.getRequiredTenantId(), dst.getRequiredId(), srcGenDef.getRequiredName() );
+					if( dstOrigGenDef == null ) {
+
+						srcDispenser = srcGenDef.getOptionalLookupDispenser();
+						if( srcDispenser != null ) {
+							dstDispenser = dstTableTableObj.readTableByUNameIdx( dst.getRequiredTenantId(),
+								dst.getRequiredId(),
+								srcDispenser.getRequiredName() );
+							if( dstDispenser == null ) {
+								throw new CFLibNullArgumentException( getClass(),
+									S_ProcName,
+									0,
+									"dstDispenser " + srcDispenser.getRequiredName() );
+							}
+						}
+						else {
+							dstDispenser = null;
+						}
+
+						dstOrigGenDef = GenTableObj.newInstance();
+						ICFBamDbKeyHash160GenEditObj dstEditGenDef = (ICFBamDbKeyHash160GenEditObj)dstOrigGenDef.beginEdit();
+						dstEditGenDef.setRequiredOwnerTenant( dst.getRequiredOwnerTenant() );
+						dstEditGenDef.setRequiredContainerSchemaDef( dst );
+						dstEditGenDef.setRequiredIsNullable( srcGenDef.getRequiredIsNullable() );
+						dstEditGenDef.setRequiredName( srcGenDef.getRequiredName() );
+						dstEditGenDef.setOptionalLookupDispenser( dstDispenser );
+						dstEditGenDef.setRequiredSlice( srcGenDef.getRequiredSlice() );
+						dstEditGenDef.setOptionalDbName( srcGenDef.getOptionalDbName() );
+						dstEditGenDef.setOptionalDescription( srcGenDef.getOptionalDescription() );
+						dstEditGenDef.setOptionalInitValue( srcGenDef.getOptionalInitValue() );
+						dstEditGenDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
+						dstEditGenDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
+						dstEditGenDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
+						if( lookupSchema == null ) {
+							lookupSchema = src;
+						}
+						dstEditGenDef.setOptionalLookupDefSchema( lookupSchema );
+						dstOrigGenDef = (ICFBamDbKeyHash160GenObj)dstEditGenDef.create();
+						dstEditGenDef = null;
+					}
+				}
+				else if( value instanceof ICFBamDbKeyHash224GenObj ) {
+					ICFBamDbKeyHash224GenTableObj GenTableObj = dst.getSchema().getDbKeyHash224GenTableObj();
+					ICFBamDbKeyHash224GenObj srcGenDef = (ICFBamDbKeyHash224GenObj)value;
+					ICFBamDbKeyHash224GenObj dstOrigGenDef = GenTableObj.readDbKeyHash224GenByUNameIdx( dst.getRequiredTenantId(), dst.getRequiredId(), srcGenDef.getRequiredName() );
+					if( dstOrigGenDef == null ) {
+
+						srcDispenser = srcGenDef.getOptionalLookupDispenser();
+						if( srcDispenser != null ) {
+							dstDispenser = dstTableTableObj.readTableByUNameIdx( dst.getRequiredTenantId(),
+								dst.getRequiredId(),
+								srcDispenser.getRequiredName() );
+							if( dstDispenser == null ) {
+								throw new CFLibNullArgumentException( getClass(),
+									S_ProcName,
+									0,
+									"dstDispenser " + srcDispenser.getRequiredName() );
+							}
+						}
+						else {
+							dstDispenser = null;
+						}
+
+						dstOrigGenDef = GenTableObj.newInstance();
+						ICFBamDbKeyHash224GenEditObj dstEditGenDef = (ICFBamDbKeyHash224GenEditObj)dstOrigGenDef.beginEdit();
+						dstEditGenDef.setRequiredOwnerTenant( dst.getRequiredOwnerTenant() );
+						dstEditGenDef.setRequiredContainerSchemaDef( dst );
+						dstEditGenDef.setRequiredIsNullable( srcGenDef.getRequiredIsNullable() );
+						dstEditGenDef.setRequiredName( srcGenDef.getRequiredName() );
+						dstEditGenDef.setOptionalLookupDispenser( dstDispenser );
+						dstEditGenDef.setRequiredSlice( srcGenDef.getRequiredSlice() );
+						dstEditGenDef.setOptionalDbName( srcGenDef.getOptionalDbName() );
+						dstEditGenDef.setOptionalDescription( srcGenDef.getOptionalDescription() );
+						dstEditGenDef.setOptionalInitValue( srcGenDef.getOptionalInitValue() );
+						dstEditGenDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
+						dstEditGenDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
+						dstEditGenDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
+						if( lookupSchema == null ) {
+							lookupSchema = src;
+						}
+						dstEditGenDef.setOptionalLookupDefSchema( lookupSchema );
+						dstOrigGenDef = (ICFBamDbKeyHash224GenObj)dstEditGenDef.create();
+						dstEditGenDef = null;
+					}
+				}
+				else if( value instanceof ICFBamDbKeyHash256GenObj ) {
+					ICFBamDbKeyHash256GenTableObj GenTableObj = dst.getSchema().getDbKeyHash256GenTableObj();
+					ICFBamDbKeyHash256GenObj srcGenDef = (ICFBamDbKeyHash256GenObj)value;
+					ICFBamDbKeyHash256GenObj dstOrigGenDef = GenTableObj.readDbKeyHash256GenByUNameIdx( dst.getRequiredTenantId(), dst.getRequiredId(), srcGenDef.getRequiredName() );
+					if( dstOrigGenDef == null ) {
+
+						srcDispenser = srcGenDef.getOptionalLookupDispenser();
+						if( srcDispenser != null ) {
+							dstDispenser = dstTableTableObj.readTableByUNameIdx( dst.getRequiredTenantId(),
+								dst.getRequiredId(),
+								srcDispenser.getRequiredName() );
+							if( dstDispenser == null ) {
+								throw new CFLibNullArgumentException( getClass(),
+									S_ProcName,
+									0,
+									"dstDispenser " + srcDispenser.getRequiredName() );
+							}
+						}
+						else {
+							dstDispenser = null;
+						}
+
+						dstOrigGenDef = GenTableObj.newInstance();
+						ICFBamDbKeyHash256GenEditObj dstEditGenDef = (ICFBamDbKeyHash256GenEditObj)dstOrigGenDef.beginEdit();
+						dstEditGenDef.setRequiredOwnerTenant( dst.getRequiredOwnerTenant() );
+						dstEditGenDef.setRequiredContainerSchemaDef( dst );
+						dstEditGenDef.setRequiredIsNullable( srcGenDef.getRequiredIsNullable() );
+						dstEditGenDef.setRequiredName( srcGenDef.getRequiredName() );
+						dstEditGenDef.setOptionalLookupDispenser( dstDispenser );
+						dstEditGenDef.setRequiredSlice( srcGenDef.getRequiredSlice() );
+						dstEditGenDef.setOptionalDbName( srcGenDef.getOptionalDbName() );
+						dstEditGenDef.setOptionalDescription( srcGenDef.getOptionalDescription() );
+						dstEditGenDef.setOptionalInitValue( srcGenDef.getOptionalInitValue() );
+						dstEditGenDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
+						dstEditGenDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
+						dstEditGenDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
+						if( lookupSchema == null ) {
+							lookupSchema = src;
+						}
+						dstEditGenDef.setOptionalLookupDefSchema( lookupSchema );
+						dstOrigGenDef = (ICFBamDbKeyHash256GenObj)dstEditGenDef.create();
+						dstEditGenDef = null;
+					}
+				}
+				else if( value instanceof ICFBamDbKeyHash384GenObj ) {
+					ICFBamDbKeyHash384GenTableObj GenTableObj = dst.getSchema().getDbKeyHash384GenTableObj();
+					ICFBamDbKeyHash384GenObj srcGenDef = (ICFBamDbKeyHash384GenObj)value;
+					ICFBamDbKeyHash384GenObj dstOrigGenDef = GenTableObj.readDbKeyHash384GenByUNameIdx( dst.getRequiredTenantId(), dst.getRequiredId(), srcGenDef.getRequiredName() );
+					if( dstOrigGenDef == null ) {
+
+						srcDispenser = srcGenDef.getOptionalLookupDispenser();
+						if( srcDispenser != null ) {
+							dstDispenser = dstTableTableObj.readTableByUNameIdx( dst.getRequiredTenantId(),
+								dst.getRequiredId(),
+								srcDispenser.getRequiredName() );
+							if( dstDispenser == null ) {
+								throw new CFLibNullArgumentException( getClass(),
+									S_ProcName,
+									0,
+									"dstDispenser " + srcDispenser.getRequiredName() );
+							}
+						}
+						else {
+							dstDispenser = null;
+						}
+
+						dstOrigGenDef = GenTableObj.newInstance();
+						ICFBamDbKeyHash384GenEditObj dstEditGenDef = (ICFBamDbKeyHash384GenEditObj)dstOrigGenDef.beginEdit();
+						dstEditGenDef.setRequiredOwnerTenant( dst.getRequiredOwnerTenant() );
+						dstEditGenDef.setRequiredContainerSchemaDef( dst );
+						dstEditGenDef.setRequiredIsNullable( srcGenDef.getRequiredIsNullable() );
+						dstEditGenDef.setRequiredName( srcGenDef.getRequiredName() );
+						dstEditGenDef.setOptionalLookupDispenser( dstDispenser );
+						dstEditGenDef.setRequiredSlice( srcGenDef.getRequiredSlice() );
+						dstEditGenDef.setOptionalDbName( srcGenDef.getOptionalDbName() );
+						dstEditGenDef.setOptionalDescription( srcGenDef.getOptionalDescription() );
+						dstEditGenDef.setOptionalInitValue( srcGenDef.getOptionalInitValue() );
+						dstEditGenDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
+						dstEditGenDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
+						dstEditGenDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
+						if( lookupSchema == null ) {
+							lookupSchema = src;
+						}
+						dstEditGenDef.setOptionalLookupDefSchema( lookupSchema );
+						dstOrigGenDef = (ICFBamDbKeyHash384GenObj)dstEditGenDef.create();
+						dstEditGenDef = null;
+					}
+				}
+				else if( value instanceof ICFBamDbKeyHash512GenObj ) {
+					ICFBamDbKeyHash512GenTableObj GenTableObj = dst.getSchema().getDbKeyHash512GenTableObj();
+					ICFBamDbKeyHash512GenObj srcGenDef = (ICFBamDbKeyHash512GenObj)value;
+					ICFBamDbKeyHash512GenObj dstOrigGenDef = GenTableObj.readDbKeyHash512GenByUNameIdx( dst.getRequiredTenantId(), dst.getRequiredId(), srcGenDef.getRequiredName() );
+					if( dstOrigGenDef == null ) {
+
+						srcDispenser = srcGenDef.getOptionalLookupDispenser();
+						if( srcDispenser != null ) {
+							dstDispenser = dstTableTableObj.readTableByUNameIdx( dst.getRequiredTenantId(),
+								dst.getRequiredId(),
+								srcDispenser.getRequiredName() );
+							if( dstDispenser == null ) {
+								throw new CFLibNullArgumentException( getClass(),
+									S_ProcName,
+									0,
+									"dstDispenser " + srcDispenser.getRequiredName() );
+							}
+						}
+						else {
+							dstDispenser = null;
+						}
+
+						dstOrigGenDef = GenTableObj.newInstance();
+						ICFBamDbKeyHash512GenEditObj dstEditGenDef = (ICFBamDbKeyHash512GenEditObj)dstOrigGenDef.beginEdit();
+						dstEditGenDef.setRequiredOwnerTenant( dst.getRequiredOwnerTenant() );
+						dstEditGenDef.setRequiredContainerSchemaDef( dst );
+						dstEditGenDef.setRequiredIsNullable( srcGenDef.getRequiredIsNullable() );
+						dstEditGenDef.setRequiredName( srcGenDef.getRequiredName() );
+						dstEditGenDef.setOptionalLookupDispenser( dstDispenser );
+						dstEditGenDef.setRequiredSlice( srcGenDef.getRequiredSlice() );
+						dstEditGenDef.setOptionalDbName( srcGenDef.getOptionalDbName() );
+						dstEditGenDef.setOptionalDescription( srcGenDef.getOptionalDescription() );
+						dstEditGenDef.setOptionalInitValue( srcGenDef.getOptionalInitValue() );
+						dstEditGenDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
+						dstEditGenDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
+						dstEditGenDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
+						if( lookupSchema == null ) {
+							lookupSchema = src;
+						}
+						dstEditGenDef.setOptionalLookupDefSchema( lookupSchema );
+						dstOrigGenDef = (ICFBamDbKeyHash512GenObj)dstEditGenDef.create();
 						dstEditGenDef = null;
 					}
 				}
@@ -937,6 +1269,195 @@ public class CFBamXmlLoaderSchemaRefHandler
 						}
 						dstEditDef.setOptionalLookupDefSchema( lookupSchema );
 						dstOrigDef = (ICFBamUuidTypeObj)dstEditDef.create();
+						dstEditDef = null;
+					}
+				}
+				else if( value instanceof ICFBamUuid6TypeObj ) {
+					ICFBamUuid6TypeTableObj GenTableObj = dst.getSchema().getUuid6TypeTableObj();
+					ICFBamUuid6TypeObj srcGenDef = (ICFBamUuid6TypeObj)value;
+					ICFBamUuid6TypeObj dstOrigDef = GenTableObj.readUuid6TypeByUNameIdx( dst.getRequiredTenantId(), dst.getRequiredId(), srcGenDef.getRequiredName() );
+					if( dstOrigDef == null ) {
+						dstOrigDef = GenTableObj.newInstance();
+						ICFBamUuid6TypeEditObj dstEditDef = (ICFBamUuid6TypeEditObj)dstOrigDef.beginEdit();
+						dstEditDef.setRequiredOwnerTenant( dst.getRequiredOwnerTenant() );
+						dstEditDef.setRequiredContainerSchemaDef( dst );
+						dstEditDef.setRequiredIsNullable( srcGenDef.getRequiredIsNullable() );
+						dstEditDef.setRequiredName( srcGenDef.getRequiredName() );
+						dstEditDef.setOptionalDbName( srcGenDef.getOptionalDbName() );
+						dstEditDef.setOptionalDescription( srcGenDef.getOptionalDescription() );
+						dstEditDef.setOptionalGenerateId( srcGenDef.getOptionalGenerateId() );
+						dstEditDef.setOptionalInitValue( srcGenDef.getOptionalInitValue() );
+						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
+						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
+						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
+						if( lookupSchema == null ) {
+							lookupSchema = src;
+						}
+						dstEditDef.setOptionalLookupDefSchema( lookupSchema );
+						dstOrigDef = (ICFBamUuid6TypeObj)dstEditDef.create();
+						dstEditDef = null;
+					}
+				}
+				else if( value instanceof ICFBamDbKeyHash128TypeObj ) {
+					ICFBamDbKeyHash128TypeTableObj GenTableObj = dst.getSchema().getDbKeyHash128TypeTableObj();
+					ICFBamDbKeyHash128TypeObj srcGenDef = (ICFBamDbKeyHash128TypeObj)value;
+					ICFBamDbKeyHash128TypeObj dstOrigDef = GenTableObj.readDbKeyHash128TypeByUNameIdx( dst.getRequiredTenantId(), dst.getRequiredId(), srcGenDef.getRequiredName() );
+					if( dstOrigDef == null ) {
+						dstOrigDef = GenTableObj.newInstance();
+						ICFBamDbKeyHash128TypeEditObj dstEditDef = (ICFBamDbKeyHash128TypeEditObj)dstOrigDef.beginEdit();
+						dstEditDef.setRequiredOwnerTenant( dst.getRequiredOwnerTenant() );
+						dstEditDef.setRequiredContainerSchemaDef( dst );
+						dstEditDef.setRequiredIsNullable( srcGenDef.getRequiredIsNullable() );
+						dstEditDef.setRequiredName( srcGenDef.getRequiredName() );
+						dstEditDef.setOptionalDbName( srcGenDef.getOptionalDbName() );
+						dstEditDef.setOptionalDescription( srcGenDef.getOptionalDescription() );
+						dstEditDef.setOptionalGenerateId( srcGenDef.getOptionalGenerateId() );
+						dstEditDef.setOptionalInitValue( srcGenDef.getOptionalInitValue() );
+						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
+						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
+						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
+						if( lookupSchema == null ) {
+							lookupSchema = src;
+						}
+						dstEditDef.setOptionalLookupDefSchema( lookupSchema );
+						dstOrigDef = (ICFBamDbKeyHash128TypeObj)dstEditDef.create();
+						dstEditDef = null;
+					}
+				}
+				else if( value instanceof ICFBamDbKeyHash160TypeObj ) {
+					ICFBamDbKeyHash160TypeTableObj GenTableObj = dst.getSchema().getDbKeyHash160TypeTableObj();
+					ICFBamDbKeyHash160TypeObj srcGenDef = (ICFBamDbKeyHash160TypeObj)value;
+					ICFBamDbKeyHash160TypeObj dstOrigDef = GenTableObj.readDbKeyHash160TypeByUNameIdx( dst.getRequiredTenantId(), dst.getRequiredId(), srcGenDef.getRequiredName() );
+					if( dstOrigDef == null ) {
+						dstOrigDef = GenTableObj.newInstance();
+						ICFBamDbKeyHash160TypeEditObj dstEditDef = (ICFBamDbKeyHash160TypeEditObj)dstOrigDef.beginEdit();
+						dstEditDef.setRequiredOwnerTenant( dst.getRequiredOwnerTenant() );
+						dstEditDef.setRequiredContainerSchemaDef( dst );
+						dstEditDef.setRequiredIsNullable( srcGenDef.getRequiredIsNullable() );
+						dstEditDef.setRequiredName( srcGenDef.getRequiredName() );
+						dstEditDef.setOptionalDbName( srcGenDef.getOptionalDbName() );
+						dstEditDef.setOptionalDescription( srcGenDef.getOptionalDescription() );
+						dstEditDef.setOptionalGenerateId( srcGenDef.getOptionalGenerateId() );
+						dstEditDef.setOptionalInitValue( srcGenDef.getOptionalInitValue() );
+						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
+						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
+						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
+						if( lookupSchema == null ) {
+							lookupSchema = src;
+						}
+						dstEditDef.setOptionalLookupDefSchema( lookupSchema );
+						dstOrigDef = (ICFBamDbKeyHash160TypeObj)dstEditDef.create();
+						dstEditDef = null;
+					}
+				}
+				else if( value instanceof ICFBamDbKeyHash224TypeObj ) {
+					ICFBamDbKeyHash224TypeTableObj GenTableObj = dst.getSchema().getDbKeyHash224TypeTableObj();
+					ICFBamDbKeyHash224TypeObj srcGenDef = (ICFBamDbKeyHash224TypeObj)value;
+					ICFBamDbKeyHash224TypeObj dstOrigDef = GenTableObj.readDbKeyHash224TypeByUNameIdx( dst.getRequiredTenantId(), dst.getRequiredId(), srcGenDef.getRequiredName() );
+					if( dstOrigDef == null ) {
+						dstOrigDef = GenTableObj.newInstance();
+						ICFBamDbKeyHash224TypeEditObj dstEditDef = (ICFBamDbKeyHash224TypeEditObj)dstOrigDef.beginEdit();
+						dstEditDef.setRequiredOwnerTenant( dst.getRequiredOwnerTenant() );
+						dstEditDef.setRequiredContainerSchemaDef( dst );
+						dstEditDef.setRequiredIsNullable( srcGenDef.getRequiredIsNullable() );
+						dstEditDef.setRequiredName( srcGenDef.getRequiredName() );
+						dstEditDef.setOptionalDbName( srcGenDef.getOptionalDbName() );
+						dstEditDef.setOptionalDescription( srcGenDef.getOptionalDescription() );
+						dstEditDef.setOptionalGenerateId( srcGenDef.getOptionalGenerateId() );
+						dstEditDef.setOptionalInitValue( srcGenDef.getOptionalInitValue() );
+						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
+						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
+						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
+						if( lookupSchema == null ) {
+							lookupSchema = src;
+						}
+						dstEditDef.setOptionalLookupDefSchema( lookupSchema );
+						dstOrigDef = (ICFBamDbKeyHash224TypeObj)dstEditDef.create();
+						dstEditDef = null;
+					}
+				}
+				else if( value instanceof ICFBamDbKeyHash256TypeObj ) {
+					ICFBamDbKeyHash256TypeTableObj GenTableObj = dst.getSchema().getDbKeyHash256TypeTableObj();
+					ICFBamDbKeyHash256TypeObj srcGenDef = (ICFBamDbKeyHash256TypeObj)value;
+					ICFBamDbKeyHash256TypeObj dstOrigDef = GenTableObj.readDbKeyHash256TypeByUNameIdx( dst.getRequiredTenantId(), dst.getRequiredId(), srcGenDef.getRequiredName() );
+					if( dstOrigDef == null ) {
+						dstOrigDef = GenTableObj.newInstance();
+						ICFBamDbKeyHash256TypeEditObj dstEditDef = (ICFBamDbKeyHash256TypeEditObj)dstOrigDef.beginEdit();
+						dstEditDef.setRequiredOwnerTenant( dst.getRequiredOwnerTenant() );
+						dstEditDef.setRequiredContainerSchemaDef( dst );
+						dstEditDef.setRequiredIsNullable( srcGenDef.getRequiredIsNullable() );
+						dstEditDef.setRequiredName( srcGenDef.getRequiredName() );
+						dstEditDef.setOptionalDbName( srcGenDef.getOptionalDbName() );
+						dstEditDef.setOptionalDescription( srcGenDef.getOptionalDescription() );
+						dstEditDef.setOptionalGenerateId( srcGenDef.getOptionalGenerateId() );
+						dstEditDef.setOptionalInitValue( srcGenDef.getOptionalInitValue() );
+						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
+						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
+						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
+						if( lookupSchema == null ) {
+							lookupSchema = src;
+						}
+						dstEditDef.setOptionalLookupDefSchema( lookupSchema );
+						dstOrigDef = (ICFBamDbKeyHash256TypeObj)dstEditDef.create();
+						dstEditDef = null;
+					}
+				}
+				else if( value instanceof ICFBamDbKeyHash384TypeObj ) {
+					ICFBamDbKeyHash384TypeTableObj GenTableObj = dst.getSchema().getDbKeyHash384TypeTableObj();
+					ICFBamDbKeyHash384TypeObj srcGenDef = (ICFBamDbKeyHash384TypeObj)value;
+					ICFBamDbKeyHash384TypeObj dstOrigDef = GenTableObj.readDbKeyHash384TypeByUNameIdx( dst.getRequiredTenantId(), dst.getRequiredId(), srcGenDef.getRequiredName() );
+					if( dstOrigDef == null ) {
+						dstOrigDef = GenTableObj.newInstance();
+						ICFBamDbKeyHash384TypeEditObj dstEditDef = (ICFBamDbKeyHash384TypeEditObj)dstOrigDef.beginEdit();
+						dstEditDef.setRequiredOwnerTenant( dst.getRequiredOwnerTenant() );
+						dstEditDef.setRequiredContainerSchemaDef( dst );
+						dstEditDef.setRequiredIsNullable( srcGenDef.getRequiredIsNullable() );
+						dstEditDef.setRequiredName( srcGenDef.getRequiredName() );
+						dstEditDef.setOptionalDbName( srcGenDef.getOptionalDbName() );
+						dstEditDef.setOptionalDescription( srcGenDef.getOptionalDescription() );
+						dstEditDef.setOptionalGenerateId( srcGenDef.getOptionalGenerateId() );
+						dstEditDef.setOptionalInitValue( srcGenDef.getOptionalInitValue() );
+						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
+						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
+						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
+						if( lookupSchema == null ) {
+							lookupSchema = src;
+						}
+						dstEditDef.setOptionalLookupDefSchema( lookupSchema );
+						dstOrigDef = (ICFBamDbKeyHash384TypeObj)dstEditDef.create();
+						dstEditDef = null;
+					}
+				}
+				else if( value instanceof ICFBamDbKeyHash512TypeObj ) {
+					ICFBamDbKeyHash512TypeTableObj GenTableObj = dst.getSchema().getDbKeyHash512TypeTableObj();
+					ICFBamDbKeyHash512TypeObj srcGenDef = (ICFBamDbKeyHash512TypeObj)value;
+					ICFBamDbKeyHash512TypeObj dstOrigDef = GenTableObj.readDbKeyHash512TypeByUNameIdx( dst.getRequiredTenantId(), dst.getRequiredId(), srcGenDef.getRequiredName() );
+					if( dstOrigDef == null ) {
+						dstOrigDef = GenTableObj.newInstance();
+						ICFBamDbKeyHash512TypeEditObj dstEditDef = (ICFBamDbKeyHash512TypeEditObj)dstOrigDef.beginEdit();
+						dstEditDef.setRequiredOwnerTenant( dst.getRequiredOwnerTenant() );
+						dstEditDef.setRequiredContainerSchemaDef( dst );
+						dstEditDef.setRequiredIsNullable( srcGenDef.getRequiredIsNullable() );
+						dstEditDef.setRequiredName( srcGenDef.getRequiredName() );
+						dstEditDef.setOptionalDbName( srcGenDef.getOptionalDbName() );
+						dstEditDef.setOptionalDescription( srcGenDef.getOptionalDescription() );
+						dstEditDef.setOptionalGenerateId( srcGenDef.getOptionalGenerateId() );
+						dstEditDef.setOptionalInitValue( srcGenDef.getOptionalInitValue() );
+						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
+						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
+						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
+						if( lookupSchema == null ) {
+							lookupSchema = src;
+						}
+						dstEditDef.setOptionalLookupDefSchema( lookupSchema );
+						dstOrigDef = (ICFBamDbKeyHash512TypeObj)dstEditDef.create();
 						dstEditDef = null;
 					}
 				}
@@ -1883,6 +2404,188 @@ public class CFBamXmlLoaderSchemaRefHandler
 						}
 						dstEditDef.setOptionalLookupDefSchema( lookupSchema );
 						dstOrigDef = (ICFBamUuidColObj)dstEditDef.create();
+						dstEditDef = null;
+					}
+					else if( value instanceof ICFBamUuid6ColObj ) {
+						ICFBamUuid6ColTableObj GenTableObj = dst.getSchema().getUuid6ColTableObj();
+						ICFBamUuid6ColObj srcGenDef = (ICFBamUuid6ColObj)value;
+						ICFBamUuid6ColObj dstOrigDef = GenTableObj.newInstance();
+						ICFBamUuid6ColEditObj dstEditDef = (ICFBamUuid6ColEditObj)dstOrigDef.beginEdit();
+						dstEditDef.setRequiredOwnerTenant( dst.getRequiredOwnerTenant() );
+						dstEditDef.setRequiredContainerTable( origDstTable );
+						dstEditDef.setRequiredIsNullable( srcGenDef.getRequiredIsNullable() );
+						dstEditDef.setRequiredName( srcGenDef.getRequiredName() );
+						dstEditDef.setOptionalDefaultXmlValue( srcGenDef.getOptionalDefaultXmlValue() );
+						dstEditDef.setRequiredImplementsPolymorph( srcGenDef.getRequiredImplementsPolymorph() );
+						dstEditDef.setOptionalDbName( srcGenDef.getOptionalDbName() );
+						dstEditDef.setOptionalDescription( srcGenDef.getOptionalDescription() );
+						dstEditDef.setOptionalGenerateId( srcGenDef.getOptionalGenerateId() );
+						dstEditDef.setOptionalInitValue( srcGenDef.getOptionalInitValue() );
+						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
+						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
+						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
+						if( lookupSchema == null ) {
+							lookupSchema = src;
+						}
+						dstEditDef.setOptionalLookupDefSchema( lookupSchema );
+						dstOrigDef = (ICFBamUuid6ColObj)dstEditDef.create();
+						dstEditDef = null;
+					}
+					else if( value instanceof ICFBamDbKeyHash128ColObj ) {
+						ICFBamDbKeyHash128ColTableObj GenTableObj = dst.getSchema().getDbKeyHash128ColTableObj();
+						ICFBamDbKeyHash128ColObj srcGenDef = (ICFBamDbKeyHash128ColObj)value;
+						ICFBamDbKeyHash128ColObj dstOrigDef = GenTableObj.newInstance();
+						ICFBamDbKeyHash128ColEditObj dstEditDef = (ICFBamDbKeyHash128ColEditObj)dstOrigDef.beginEdit();
+						dstEditDef.setRequiredOwnerTenant( dst.getRequiredOwnerTenant() );
+						dstEditDef.setRequiredContainerTable( origDstTable );
+						dstEditDef.setRequiredIsNullable( srcGenDef.getRequiredIsNullable() );
+						dstEditDef.setRequiredName( srcGenDef.getRequiredName() );
+						dstEditDef.setOptionalDefaultXmlValue( srcGenDef.getOptionalDefaultXmlValue() );
+						dstEditDef.setRequiredImplementsPolymorph( srcGenDef.getRequiredImplementsPolymorph() );
+						dstEditDef.setOptionalDbName( srcGenDef.getOptionalDbName() );
+						dstEditDef.setOptionalDescription( srcGenDef.getOptionalDescription() );
+						dstEditDef.setOptionalGenerateId( srcGenDef.getOptionalGenerateId() );
+						dstEditDef.setOptionalInitValue( srcGenDef.getOptionalInitValue() );
+						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
+						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
+						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
+						if( lookupSchema == null ) {
+							lookupSchema = src;
+						}
+						dstEditDef.setOptionalLookupDefSchema( lookupSchema );
+						dstOrigDef = (ICFBamDbKeyHash128ColObj)dstEditDef.create();
+						dstEditDef = null;
+					}
+					else if( value instanceof ICFBamDbKeyHash160ColObj ) {
+						ICFBamDbKeyHash160ColTableObj GenTableObj = dst.getSchema().getDbKeyHash160ColTableObj();
+						ICFBamDbKeyHash160ColObj srcGenDef = (ICFBamDbKeyHash160ColObj)value;
+						ICFBamDbKeyHash160ColObj dstOrigDef = GenTableObj.newInstance();
+						ICFBamDbKeyHash160ColEditObj dstEditDef = (ICFBamDbKeyHash160ColEditObj)dstOrigDef.beginEdit();
+						dstEditDef.setRequiredOwnerTenant( dst.getRequiredOwnerTenant() );
+						dstEditDef.setRequiredContainerTable( origDstTable );
+						dstEditDef.setRequiredIsNullable( srcGenDef.getRequiredIsNullable() );
+						dstEditDef.setRequiredName( srcGenDef.getRequiredName() );
+						dstEditDef.setOptionalDefaultXmlValue( srcGenDef.getOptionalDefaultXmlValue() );
+						dstEditDef.setRequiredImplementsPolymorph( srcGenDef.getRequiredImplementsPolymorph() );
+						dstEditDef.setOptionalDbName( srcGenDef.getOptionalDbName() );
+						dstEditDef.setOptionalDescription( srcGenDef.getOptionalDescription() );
+						dstEditDef.setOptionalGenerateId( srcGenDef.getOptionalGenerateId() );
+						dstEditDef.setOptionalInitValue( srcGenDef.getOptionalInitValue() );
+						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
+						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
+						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
+						if( lookupSchema == null ) {
+							lookupSchema = src;
+						}
+						dstEditDef.setOptionalLookupDefSchema( lookupSchema );
+						dstOrigDef = (ICFBamDbKeyHash160ColObj)dstEditDef.create();
+						dstEditDef = null;
+					}
+					else if( value instanceof ICFBamDbKeyHash224ColObj ) {
+						ICFBamDbKeyHash224ColTableObj GenTableObj = dst.getSchema().getDbKeyHash224ColTableObj();
+						ICFBamDbKeyHash224ColObj srcGenDef = (ICFBamDbKeyHash224ColObj)value;
+						ICFBamDbKeyHash224ColObj dstOrigDef = GenTableObj.newInstance();
+						ICFBamDbKeyHash224ColEditObj dstEditDef = (ICFBamDbKeyHash224ColEditObj)dstOrigDef.beginEdit();
+						dstEditDef.setRequiredOwnerTenant( dst.getRequiredOwnerTenant() );
+						dstEditDef.setRequiredContainerTable( origDstTable );
+						dstEditDef.setRequiredIsNullable( srcGenDef.getRequiredIsNullable() );
+						dstEditDef.setRequiredName( srcGenDef.getRequiredName() );
+						dstEditDef.setOptionalDefaultXmlValue( srcGenDef.getOptionalDefaultXmlValue() );
+						dstEditDef.setRequiredImplementsPolymorph( srcGenDef.getRequiredImplementsPolymorph() );
+						dstEditDef.setOptionalDbName( srcGenDef.getOptionalDbName() );
+						dstEditDef.setOptionalDescription( srcGenDef.getOptionalDescription() );
+						dstEditDef.setOptionalGenerateId( srcGenDef.getOptionalGenerateId() );
+						dstEditDef.setOptionalInitValue( srcGenDef.getOptionalInitValue() );
+						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
+						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
+						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
+						if( lookupSchema == null ) {
+							lookupSchema = src;
+						}
+						dstEditDef.setOptionalLookupDefSchema( lookupSchema );
+						dstOrigDef = (ICFBamDbKeyHash224ColObj)dstEditDef.create();
+						dstEditDef = null;
+					}
+					else if( value instanceof ICFBamDbKeyHash256ColObj ) {
+						ICFBamDbKeyHash256ColTableObj GenTableObj = dst.getSchema().getDbKeyHash256ColTableObj();
+						ICFBamDbKeyHash256ColObj srcGenDef = (ICFBamDbKeyHash256ColObj)value;
+						ICFBamDbKeyHash256ColObj dstOrigDef = GenTableObj.newInstance();
+						ICFBamDbKeyHash256ColEditObj dstEditDef = (ICFBamDbKeyHash256ColEditObj)dstOrigDef.beginEdit();
+						dstEditDef.setRequiredOwnerTenant( dst.getRequiredOwnerTenant() );
+						dstEditDef.setRequiredContainerTable( origDstTable );
+						dstEditDef.setRequiredIsNullable( srcGenDef.getRequiredIsNullable() );
+						dstEditDef.setRequiredName( srcGenDef.getRequiredName() );
+						dstEditDef.setOptionalDefaultXmlValue( srcGenDef.getOptionalDefaultXmlValue() );
+						dstEditDef.setRequiredImplementsPolymorph( srcGenDef.getRequiredImplementsPolymorph() );
+						dstEditDef.setOptionalDbName( srcGenDef.getOptionalDbName() );
+						dstEditDef.setOptionalDescription( srcGenDef.getOptionalDescription() );
+						dstEditDef.setOptionalGenerateId( srcGenDef.getOptionalGenerateId() );
+						dstEditDef.setOptionalInitValue( srcGenDef.getOptionalInitValue() );
+						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
+						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
+						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
+						if( lookupSchema == null ) {
+							lookupSchema = src;
+						}
+						dstEditDef.setOptionalLookupDefSchema( lookupSchema );
+						dstOrigDef = (ICFBamDbKeyHash256ColObj)dstEditDef.create();
+						dstEditDef = null;
+					}
+					else if( value instanceof ICFBamDbKeyHash384ColObj ) {
+						ICFBamDbKeyHash384ColTableObj GenTableObj = dst.getSchema().getDbKeyHash384ColTableObj();
+						ICFBamDbKeyHash384ColObj srcGenDef = (ICFBamDbKeyHash384ColObj)value;
+						ICFBamDbKeyHash384ColObj dstOrigDef = GenTableObj.newInstance();
+						ICFBamDbKeyHash384ColEditObj dstEditDef = (ICFBamDbKeyHash384ColEditObj)dstOrigDef.beginEdit();
+						dstEditDef.setRequiredOwnerTenant( dst.getRequiredOwnerTenant() );
+						dstEditDef.setRequiredContainerTable( origDstTable );
+						dstEditDef.setRequiredIsNullable( srcGenDef.getRequiredIsNullable() );
+						dstEditDef.setRequiredName( srcGenDef.getRequiredName() );
+						dstEditDef.setOptionalDefaultXmlValue( srcGenDef.getOptionalDefaultXmlValue() );
+						dstEditDef.setRequiredImplementsPolymorph( srcGenDef.getRequiredImplementsPolymorph() );
+						dstEditDef.setOptionalDbName( srcGenDef.getOptionalDbName() );
+						dstEditDef.setOptionalDescription( srcGenDef.getOptionalDescription() );
+						dstEditDef.setOptionalGenerateId( srcGenDef.getOptionalGenerateId() );
+						dstEditDef.setOptionalInitValue( srcGenDef.getOptionalInitValue() );
+						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
+						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
+						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
+						if( lookupSchema == null ) {
+							lookupSchema = src;
+						}
+						dstEditDef.setOptionalLookupDefSchema( lookupSchema );
+						dstOrigDef = (ICFBamDbKeyHash384ColObj)dstEditDef.create();
+						dstEditDef = null;
+					}
+					else if( value instanceof ICFBamDbKeyHash512ColObj ) {
+						ICFBamDbKeyHash512ColTableObj GenTableObj = dst.getSchema().getDbKeyHash512ColTableObj();
+						ICFBamDbKeyHash512ColObj srcGenDef = (ICFBamDbKeyHash512ColObj)value;
+						ICFBamDbKeyHash512ColObj dstOrigDef = GenTableObj.newInstance();
+						ICFBamDbKeyHash512ColEditObj dstEditDef = (ICFBamDbKeyHash512ColEditObj)dstOrigDef.beginEdit();
+						dstEditDef.setRequiredOwnerTenant( dst.getRequiredOwnerTenant() );
+						dstEditDef.setRequiredContainerTable( origDstTable );
+						dstEditDef.setRequiredIsNullable( srcGenDef.getRequiredIsNullable() );
+						dstEditDef.setRequiredName( srcGenDef.getRequiredName() );
+						dstEditDef.setOptionalDefaultXmlValue( srcGenDef.getOptionalDefaultXmlValue() );
+						dstEditDef.setRequiredImplementsPolymorph( srcGenDef.getRequiredImplementsPolymorph() );
+						dstEditDef.setOptionalDbName( srcGenDef.getOptionalDbName() );
+						dstEditDef.setOptionalDescription( srcGenDef.getOptionalDescription() );
+						dstEditDef.setOptionalGenerateId( srcGenDef.getOptionalGenerateId() );
+						dstEditDef.setOptionalInitValue( srcGenDef.getOptionalInitValue() );
+						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
+						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
+						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
+						if( lookupSchema == null ) {
+							lookupSchema = src;
+						}
+						dstEditDef.setOptionalLookupDefSchema( lookupSchema );
+						dstOrigDef = (ICFBamDbKeyHash512ColObj)dstEditDef.create();
 						dstEditDef = null;
 					}
 					else {
