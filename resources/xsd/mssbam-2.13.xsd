@@ -90,6 +90,10 @@
 	<xsd:restriction base="xsd:long"/>
 </xsd:simpleType>
 
+<xsd:simpleType name="TweakIdGenType">
+	<xsd:restriction base="xsd:long"/>
+</xsd:simpleType>
+
 <xsd:simpleType name="LoaderBehaviourEnumType">
 	<xsd:restriction base="xsd:token">
 		<xsd:minLength value="1"/>
@@ -3627,6 +3631,18 @@
 	</xsd:restriction>
 </xsd:simpleType>
 
+<xsd:simpleType name="TweakTenantIdType">
+	<xsd:restriction base="TenantIdGenType"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="TweakReplacesInheritedType">
+	<xsd:restriction base="xsd:boolean"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="TweakNameType">
+	<xsd:restriction base="NameTypeType"/>
+</xsd:simpleType>
+
 <xsd:simpleType name="TableRevisionType">
 	<xsd:restriction base="xsd:integer"/>
 </xsd:simpleType>
@@ -5075,6 +5091,7 @@
 					<xsd:element name="SchemaRef" type="SchemaRefObjType"/>
 					<xsd:element name="Table" type="TableObjType" />
 					<xsd:element name="TableAddendum" type="TableAddendumObjType" />
+					<xsd:element name="SchemaTweak" type="SchemaTweakObjType" />
 					<xsd:element name="BlobType" type="BlobTypeObjType" />
 					<xsd:element name="BoolType" type="BoolTypeObjType" />
 					<xsd:element name="Int16Type" type="Int16TypeObjType" />
@@ -5311,6 +5328,19 @@
 	</xsd:complexContent>
 </xsd:complexType>
 
+<xsd:complexType name="SchemaTweakObjType" mixed="true">
+	<xsd:complexContent>
+		<xsd:sequence>
+			<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			</xsd:choice>
+		</xsd:sequence>
+		<xsd:attribute name="TenantId" type="TweakTenantIdType" use="optional"/>
+		<xsd:attribute name="XmlElementName" type="TweakNameType" use="optional"/>
+		<xsd:attribute name="Name" type="TweakNameType" use="required"/>
+		<xsd:attribute name="ReplacesInherited" type="TweakReplacedsInheritedType" use="optional"/>
+	</xsd:complexContent>
+</xsd:complexType>
+
 <xsd:complexType mixed="true" name="SchemaRefObjType">
 	<xsd:complexContent>
 		<xsd:extension base="ScopeObjType">
@@ -5328,6 +5358,7 @@
 				<xsd:choice minOccurs="0" maxOccurs="unbounded">
 					<xsd:element name="SuperClassRelation" type="SuperClassRelationObjType" />
 					<xsd:element name="Relation" type="RelationObjType" />
+					<xsd:element name="TableTweak" type="TableTweakObjType" />
 					<xsd:element name="TableCol" type="TableColObjType" />
 					<xsd:element name="BlobCol" type="BlobColObjType" />
 					<xsd:element name="BoolCol" type="BoolColObjType" />
@@ -5611,6 +5642,7 @@
 					<xsd:element name="ServerProc" type="ServerProcObjType" />
 					<xsd:element name="ServerObjFunc" type="ServerObjFuncObjType" />
 					<xsd:element name="ServerListFunc" type="ServerListFuncObjType" />
+					<xsd:element name="TableTweak" type="TableTweakObjType" />
 				</xsd:choice>
 			</xsd:sequence>
 			<xsd:attribute name="FromTable" type="TableNameType" use="required"/>
@@ -5831,6 +5863,19 @@
 			<xsd:attribute name="XmlElementName" type="TableColXmlElementNameType" use="optional"/>
 			<xsd:attribute name="DataType" type="xsd:string" use="required"/>
 		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="TableTweakObjType" mixed="true">
+	<xsd:complexContent>
+		<xsd:sequence>
+			<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			</xsd:choice>
+		</xsd:sequence>
+		<xsd:attribute name="TenantId" type="TweakTenantIdType" use="optional"/>
+		<xsd:attribute name="XmlElementName" type="TweakNameType" use="optional"/>
+		<xsd:attribute name="Name" type="TweakNameType" use="required"/>
+		<xsd:attribute name="ReplacesInherited" type="TweakReplacedsInheritedType" use="optional"/>
 	</xsd:complexContent>
 </xsd:complexType>
 

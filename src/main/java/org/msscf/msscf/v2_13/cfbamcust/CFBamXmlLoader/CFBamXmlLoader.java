@@ -653,6 +653,7 @@ public class CFBamXmlLoader
 	private CFBamXmlLoaderRelationColHandler relationColHandler = null;
 	private CFBamXmlLoaderSchemaDefHandler schemaDefHandler = null;
 	private CFBamXmlLoaderSchemaRefHandler schemaRefHandler = null;
+	private CFBamXmlLoaderSchemaTweakHandler schemaTweakHandler = null;
 	private CFBamXmlLoaderServerListFuncHandler serverListFuncHandler = null;
 	private CFBamXmlLoaderServerObjFuncHandler serverObjFuncHandler = null;
 	private CFBamXmlLoaderServerProcHandler serverProcHandler = null;
@@ -669,6 +670,7 @@ public class CFBamXmlLoader
 	private CFBamXmlLoaderTableHandler tableHandler = null;
 	private CFBamXmlLoaderTableAddendumHandler tableAddendumHandler = null;
 	private CFBamXmlLoaderTableColHandler tableColHandler = null;
+	private CFBamXmlLoaderTableTweakHandler tableTweakHandler = null;
 	private CFBamXmlLoaderTextColHandler textColHandler = null;
 	private CFBamXmlLoaderTextTypeHandler textTypeHandler = null;
 	private CFBamXmlLoaderTimeColHandler timeColHandler = null;
@@ -3340,6 +3342,7 @@ public class CFBamXmlLoader
 			schemaDefHandler.addElementHandler( "ServerImplLicense", getServerImplLicenseHandler() );
 			schemaDefHandler.addElementHandler( "ServerXFaceLicense", getServerXFaceLicenseHandler() );
 			schemaDefHandler.addElementHandler( "SchemaRef", getSchemaRefHandler() );
+			schemaDefHandler.addElementHandler( "SchemaTweak", getSchemaTweakHandler() );
 			schemaDefHandler.addElementHandler( "Table", getTableHandler() );
 			schemaDefHandler.addElementHandler( "TableAddendum", getTableAddendumHandler() );
 			schemaDefHandler.addElementHandler( "BlobType", getBlobTypeHandler() );
@@ -3539,6 +3542,13 @@ public class CFBamXmlLoader
 		return( schemaRefHandler );
 	}
 
+	public CFBamXmlLoaderSchemaTweakHandler getSchemaTweakHandler() {
+		if( schemaTweakHandler == null ) {
+			schemaTweakHandler = new CFBamXmlLoaderSchemaTweakHandler( this );
+		}
+		return( schemaTweakHandler );
+	}
+
 	protected CFBamXmlLoaderServerListFuncHandler getServerListFuncHandler() {
 		if( serverListFuncHandler == null ) {
 			serverListFuncHandler = new CFBamXmlLoaderServerListFuncHandler( this );
@@ -3652,6 +3662,7 @@ public class CFBamXmlLoader
 			tableHandler.addElementHandler( "ServerProc", getServerProcHandler() );
 			tableHandler.addElementHandler( "Relation", getRelationHandler() );
 			tableHandler.addElementHandler( "SuperClassRelation", getSuperClassRelationHandler() );
+			tableHandler.addElementHandler( "TableTweak", getTableTweakHandler() );
 			tableHandler.addElementHandler( "TableCol", getTableColHandler() );
 			tableHandler.addElementHandler( "BlobCol", getBlobColHandler() );
 			tableHandler.addElementHandler( "BoolCol", getBoolColHandler() );
@@ -3884,6 +3895,7 @@ public class CFBamXmlLoader
 			tableAddendumHandler.addElementHandler( "Chain", getChainHandler() );
 			tableAddendumHandler.addElementHandler( "ClearDep", getClearDepHandler() );
 			tableAddendumHandler.addElementHandler( "DelDep", getDelDepHandler() );
+			tableAddendumHandler.addElementHandler( "TableTweak", getTableTweakHandler() );
 		}
 		return( tableAddendumHandler );
 	}
@@ -3893,6 +3905,13 @@ public class CFBamXmlLoader
 			tableColHandler = new CFBamXmlLoaderTableColHandler( this );
 		}
 		return( tableColHandler );
+	}
+
+	protected CFBamXmlLoaderTableTweakHandler getTableTweakHandler() {
+		if( tableTweakHandler == null ) {
+			tableTweakHandler = new CFBamXmlLoaderTableTweakHandler( this );
+		}
+		return( tableTweakHandler );
 	}
 
 	protected CFBamXmlLoaderTextColHandler getTextColHandler() {
