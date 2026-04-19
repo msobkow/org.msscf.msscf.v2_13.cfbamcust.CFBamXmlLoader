@@ -58,6 +58,12 @@
 	</xsd:restriction>
 </xsd:simpleType>
 
+<xsd:simpleType name="NameDotNameTypeType">
+	<xsd:restriction base="xsd:string">
+		<xsd:maxLength value="385"/>
+	</xsd:restriction>
+</xsd:simpleType>
+
 <xsd:simpleType name="ScopeIdGenType">
 	<xsd:restriction base="xsd:long"/>
 </xsd:simpleType>
@@ -5042,6 +5048,17 @@
 	<xsd:attribute name="IsAscending" type="IndexColIsAscendingType" use="required"/>
 </xsd:complexType>
 
+<xsd:complexType name="IndexTweakObjType" mixed="true">
+	<xsd:sequence>
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+		</xsd:choice>
+	</xsd:sequence>
+	<xsd:attribute name="TenantId" type="TweakTenantIdType" use="optional"/>
+	<xsd:attribute name="XmlElementName" type="TweakNameType" use="optional"/>
+	<xsd:attribute name="Name" type="TweakNameType" use="required"/>
+	<xsd:attribute name="ReplacesInherited" type="TweakReplacesInheritedType" use="optional"/>
+</xsd:complexType>
+
 <xsd:complexType name="LicenseObjType" mixed="true">
 	<xsd:attribute name="Name" type="LicenseNameType" use="required"/>
 	<xsd:attribute name="ShortName" type="LicenseShortNameType" use="optional"/>
@@ -5329,16 +5346,14 @@
 </xsd:complexType>
 
 <xsd:complexType name="SchemaTweakObjType" mixed="true">
-	<xsd:complexContent>
-		<xsd:sequence>
-			<xsd:choice minOccurs="0" maxOccurs="unbounded">
-			</xsd:choice>
-		</xsd:sequence>
-		<xsd:attribute name="TenantId" type="TweakTenantIdType" use="optional"/>
-		<xsd:attribute name="XmlElementName" type="TweakNameType" use="optional"/>
-		<xsd:attribute name="Name" type="TweakNameType" use="required"/>
-		<xsd:attribute name="ReplacesInherited" type="TweakReplacedsInheritedType" use="optional"/>
-	</xsd:complexContent>
+	<xsd:sequence>
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+		</xsd:choice>
+	</xsd:sequence>
+	<xsd:attribute name="TenantId" type="TweakTenantIdType" use="optional"/>
+	<xsd:attribute name="XmlElementName" type="TweakNameType" use="optional"/>
+	<xsd:attribute name="Name" type="TweakNameType" use="required"/>
+	<xsd:attribute name="ReplacesInherited" type="TweakReplacesInheritedType" use="optional"/>
 </xsd:complexType>
 
 <xsd:complexType mixed="true" name="SchemaRefObjType">
@@ -5674,6 +5689,7 @@
 			<xsd:sequence>
 				<xsd:choice minOccurs="0" maxOccurs="unbounded">
 					<xsd:element name="IndexCol" type="IndexColObjType" />
+					<xsd:element name="IndexTweak" type="IndexTweakObjType" />
 				</xsd:choice>
 			</xsd:sequence>
 			<xsd:attribute name="Name" type="IndexNameType" use="required"/>
@@ -5692,6 +5708,19 @@
 <xsd:complexType name="PrimaryIndexObjType" mixed="true">
 	<xsd:complexContent>
 		<xsd:extension base="IndexObjType">
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+
+<xsd:complexType name="IndexAddendumObjType" mixed="true">
+	<xsd:complexContent>
+		<xsd:extension base="ScopeObjType">
+			<xsd:sequence>
+				<xsd:choice minOccurs="0" maxOccurs="unbounded">
+					<xsd:element name="IndexTweak" type="IndexTweakObjType" />
+				</xsd:choice>
+			</xsd:sequence>
+			<xsd:attribute name="FromTableIndex" type="NameDotNameType" use="required"/>
 		</xsd:extension>
 	</xsd:complexContent>
 </xsd:complexType>
@@ -5867,16 +5896,14 @@
 </xsd:complexType>
 
 <xsd:complexType name="TableTweakObjType" mixed="true">
-	<xsd:complexContent>
-		<xsd:sequence>
-			<xsd:choice minOccurs="0" maxOccurs="unbounded">
-			</xsd:choice>
-		</xsd:sequence>
-		<xsd:attribute name="TenantId" type="TweakTenantIdType" use="optional"/>
-		<xsd:attribute name="XmlElementName" type="TweakNameType" use="optional"/>
-		<xsd:attribute name="Name" type="TweakNameType" use="required"/>
-		<xsd:attribute name="ReplacesInherited" type="TweakReplacedsInheritedType" use="optional"/>
-	</xsd:complexContent>
+	<xsd:sequence>
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+		</xsd:choice>
+	</xsd:sequence>
+	<xsd:attribute name="TenantId" type="TweakTenantIdType" use="optional"/>
+	<xsd:attribute name="XmlElementName" type="TweakNameType" use="optional"/>
+	<xsd:attribute name="Name" type="TweakNameType" use="required"/>
+	<xsd:attribute name="ReplacesInherited" type="TweakReplacesInheritedType" use="optional"/>
 </xsd:complexType>
 
 <xsd:complexType name="AtomObjType" mixed="true">
