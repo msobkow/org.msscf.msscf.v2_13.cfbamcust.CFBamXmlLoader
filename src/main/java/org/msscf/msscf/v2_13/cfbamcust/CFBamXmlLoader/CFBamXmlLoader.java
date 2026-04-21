@@ -305,6 +305,8 @@ public class CFBamXmlLoader
 	private CFBamXmlLoaderId64GenHandler id64GenHandler = null;
 	private CFBamXmlLoaderIndexHandler indexHandler = null;
 	private CFBamXmlLoaderIndexColHandler indexColHandler = null;
+	private CFBamXmlLoaderIndexTweakHandler indexTweakHandler = null;
+	private CFBamXmlLoaderIndexAddendumHandler indexAddendumHandler = null;
 	private CFBamXmlLoaderInt16ColHandler int16ColHandler = null;
 	private CFBamXmlLoaderInt16TypeHandler int16TypeHandler = null;
 	private CFBamXmlLoaderInt32ColHandler int32ColHandler = null;
@@ -896,8 +898,16 @@ public class CFBamXmlLoader
 		if( indexHandler == null ) {
 			indexHandler = new CFBamXmlLoaderIndexHandler( this );
 			indexHandler.addElementHandler( "IndexCol", getIndexColHandler() );
+			indexHandler.addElementHandler( "IndexTweak", getIndexTweakHandler() );
 		}
 		return( indexHandler );
+	}
+
+	protected CFBamXmlLoaderIndexTweakHandler getIndexTweakHandler() {
+		if( indexTweakHandler == null ) {
+			indexTweakHandler = new CFBamXmlLoaderIndexTweakHandler( this );
+		}
+		return( indexTweakHandler );
 	}
 
 	protected CFBamXmlLoaderIndexColHandler getIndexColHandler() {
@@ -3345,6 +3355,7 @@ public class CFBamXmlLoader
 			schemaDefHandler.addElementHandler( "SchemaTweak", getSchemaTweakHandler() );
 			schemaDefHandler.addElementHandler( "Table", getTableHandler() );
 			schemaDefHandler.addElementHandler( "TableAddendum", getTableAddendumHandler() );
+			schemaDefHandler.addElementHandler( "IndexAddendum", getIndexAddendumHandler() );
 			schemaDefHandler.addElementHandler( "BlobType", getBlobTypeHandler() );
 			schemaDefHandler.addElementHandler( "BoolType", getBoolTypeHandler() );
 			schemaDefHandler.addElementHandler( "Int16Type", getInt16TypeHandler() );
@@ -3898,6 +3909,14 @@ public class CFBamXmlLoader
 			tableAddendumHandler.addElementHandler( "TableTweak", getTableTweakHandler() );
 		}
 		return( tableAddendumHandler );
+	}
+
+	protected CFBamXmlLoaderIndexAddendumHandler getIndexAddendumHandler() {
+		if( indexAddendumHandler == null ) {
+			indexAddendumHandler = new CFBamXmlLoaderIndexAddendumHandler( this );
+			indexAddendumHandler.addElementHandler( "IndexTweak", getIndexTweakHandler() );
+		}
+		return( indexAddendumHandler );
 	}
 
 	protected CFBamXmlLoaderTableColHandler getTableColHandler() {
