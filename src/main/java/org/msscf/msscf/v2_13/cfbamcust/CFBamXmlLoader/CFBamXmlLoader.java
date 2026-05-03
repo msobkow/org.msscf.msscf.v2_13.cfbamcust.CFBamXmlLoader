@@ -655,6 +655,7 @@ public class CFBamXmlLoader
 	private CFBamXmlLoaderRelationColHandler relationColHandler = null;
 	private CFBamXmlLoaderSchemaDefHandler schemaDefHandler = null;
 	private CFBamXmlLoaderSchemaRefHandler schemaRefHandler = null;
+	private CFBamXmlLoaderSchemaRoleHandler schemaRoleHandler = null;
 	private CFBamXmlLoaderSchemaTweakHandler schemaTweakHandler = null;
 	private CFBamXmlLoaderServerListFuncHandler serverListFuncHandler = null;
 	private CFBamXmlLoaderServerObjFuncHandler serverObjFuncHandler = null;
@@ -3352,6 +3353,7 @@ public class CFBamXmlLoader
 			schemaDefHandler.addElementHandler( "ServerImplLicense", getServerImplLicenseHandler() );
 			schemaDefHandler.addElementHandler( "ServerXFaceLicense", getServerXFaceLicenseHandler() );
 			schemaDefHandler.addElementHandler( "SchemaRef", getSchemaRefHandler() );
+			schemaDefHandler.addElementHandler( "SchemaRole", getSchemaRoleHandler() );
 			schemaDefHandler.addElementHandler( "SchemaTweak", getSchemaTweakHandler() );
 			schemaDefHandler.addElementHandler( "Table", getTableHandler() );
 			schemaDefHandler.addElementHandler( "TableAddendum", getTableAddendumHandler() );
@@ -3551,6 +3553,13 @@ public class CFBamXmlLoader
 			schemaRefHandler = new CFBamXmlLoaderSchemaRefHandler( this );
 		}
 		return( schemaRefHandler );
+	}
+
+	public CFBamXmlLoaderSchemaRoleHandler getSchemaRoleHandler() {
+		if( schemaRoleHandler == null ) {
+			schemaRoleHandler = new CFBamXmlLoaderSchemaRoleHandler( this );
+		}
+		return( schemaRoleHandler );
 	}
 
 	public CFBamXmlLoaderSchemaTweakHandler getSchemaTweakHandler() {

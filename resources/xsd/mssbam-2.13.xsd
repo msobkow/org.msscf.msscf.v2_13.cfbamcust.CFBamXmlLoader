@@ -96,6 +96,10 @@
 	<xsd:restriction base="xsd:long"/>
 </xsd:simpleType>
 
+<xsd:simpleType name="RoleIdGenType">
+	<xsd:restriction base="xsd:long"/>
+</xsd:simpleType>
+
 <xsd:simpleType name="TweakIdGenType">
 	<xsd:restriction base="xsd:long"/>
 </xsd:simpleType>
@@ -1695,6 +1699,49 @@
 	<xsd:restriction base="xsd:integer"/>
 </xsd:simpleType>
 
+<xsd:simpleType name="RoleDefTenantIdType">
+	<xsd:restriction base="TenantIdGenType">
+	</xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="RoleDefScopeIdType">
+	<xsd:restriction base="ScopeIdGenType">
+	</xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="RoleDefIdType">
+	<xsd:restriction base="RoleIdGenType">
+	</xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="RoleDefDefSchemaTenantIdType">
+	<xsd:restriction base="TenantIdGenType">
+	</xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="RoleDefDefSchemaIdType">
+	<xsd:restriction base="ScopeIdGenType">
+	</xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="RoleDefNameType">
+	<xsd:restriction base="NameTypeType">
+		<xsd:maxLength value="192"/>
+		<xsd:whiteSpace value="preserve"/>
+	</xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="RoleDefMembershipStringType">
+	<xsd:restriction base="xsd:string">
+		<xsd:maxLength value="2000000"/>
+		<xsd:whiteSpace value="preserve"/>
+	</xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="RoleDefRevisionType">
+	<xsd:restriction base="xsd:integer"/>
+</xsd:simpleType>
+
 <xsd:simpleType name="SchemaDefTenantIdType">
 	<xsd:restriction base="TenantIdGenType"/>
 </xsd:simpleType>
@@ -2334,6 +2381,25 @@
 </xsd:simpleType>
 
 <xsd:simpleType name="SchemaRefRevisionType">
+	<xsd:restriction base="xsd:integer"/>
+</xsd:simpleType>
+
+<xsd:simpleType name="SchemaRoleTenantIdType">
+	<xsd:restriction base="TenantIdGenType">
+	</xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="SchemaRoleIdType">
+	<xsd:restriction base="RoleIdGenType">
+	</xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="SchemaRoleSchemaDefIdType">
+	<xsd:restriction base="ScopeIdGenType">
+	</xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="SchemaRoleRevisionType">
 	<xsd:restriction base="xsd:integer"/>
 </xsd:simpleType>
 
@@ -5093,6 +5159,27 @@
 	<xsd:attribute name="ToCol" type="xsd:string" use="required"/>
 </xsd:complexType>
 
+<xsd:complexType name="RoleDefObjType" mixed="true">
+	<xsd:sequence>
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+		</xsd:choice>
+	</xsd:sequence>
+	<xsd:attribute name="Name" type="RoleDefNameType" use="required"/>
+	<xsd:attribute name="MembershipString" type="RoleDefMembershipStringType" use="required"/>
+	<xsd:attribute name="DefSchema" type="xsd:string" use="optional"/>
+</xsd:complexType>
+
+<xsd:complexType name="SchemaRoleObjType" mixed="true">
+	<xsd:complexContent>
+		<xsd:extension base="RoleDefObjType">
+			<xsd:sequence>
+				<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				</xsd:choice>
+			</xsd:sequence>
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+
 <xsd:complexType name="ScopeObjType" mixed="true">
 	<xsd:sequence>
 		<xsd:choice minOccurs="0" maxOccurs="unbounded">
@@ -5109,6 +5196,7 @@
 					<xsd:element name="Table" type="TableObjType" />
 					<xsd:element name="TableAddendum" type="TableAddendumObjType" />
 					<xsd:element name="SchemaTweak" type="SchemaTweakObjType" />
+					<xsd:element name="SchemaRole" type="SchemaRoleObjType" />
 					<xsd:element name="BlobType" type="BlobTypeObjType" />
 					<xsd:element name="BoolType" type="BoolTypeObjType" />
 					<xsd:element name="Int16Type" type="Int16TypeObjType" />

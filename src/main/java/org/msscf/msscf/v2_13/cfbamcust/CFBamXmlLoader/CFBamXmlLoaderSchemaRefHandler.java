@@ -1489,6 +1489,32 @@ public class CFBamXmlLoaderSchemaRefHandler
 		}
 	}
 
+	protected void importMergeSchemaRoles( ICFBamSchemaDefObj dst, ICFBamSchemaDefObj src ) {
+		final String S_ProcName = "importMergeSchemaRoles";
+		List<ICFBamSchemaRoleObj> components = src.getOptionalComponentsRoles();
+		Iterator<ICFBamSchemaRoleObj> componentRoles = components.iterator();
+		ICFBamSchemaRoleTableObj dstSchemaRoleTableObj = dst.getSchema().getSchemaRoleTableObj();
+		ICFBamSchemaRoleObj role;
+		while( componentRoles.hasNext() ) {
+			role = componentRoles.next();
+			if( null == dstSchemaRoleTableObj.readSchemaRoleByUNameIdx( dst.getRequiredTenantId(), dst.getRequiredId(), role.getRequiredName() ) ) {
+				ICFBamSchemaRoleObj dstOrigDef = dstSchemaRoleTableObj.newInstance();
+				ICFBamSchemaRoleEditObj dstEditDef = (ICFBamSchemaRoleEditObj)dstOrigDef.beginEdit();
+				dstEditDef.setRequiredOwnerTenant( dst.getRequiredOwnerTenant() );
+				dstEditDef.setRequiredContainerSchemaDef( dst );
+				dstEditDef.setRequiredName( role.getRequiredName() );
+				dstEditDef.setRequiredMembershipString(role.getRequiredMembershipString());
+				ICFBamSchemaDefObj lookupSchema = role.getOptionalLookupDefSchema();
+				if( lookupSchema == null ) {
+					lookupSchema = src;
+				}
+				dstEditDef.setOptionalLookupDefSchema( lookupSchema );
+				dstOrigDef = (ICFBamSchemaRoleObj)dstEditDef.create();
+				dstEditDef = null;
+			}
+		}
+	}
+
 	protected void importMergeSchemaTables( ICFBamSchemaDefObj dst, ICFBamSchemaDefObj src ) {
 		final String S_ProcName = "importMergeSchemaTables";
 		ICFBamTableTableObj dstTableTableObj = dst.getSchema().getTableTableObj();
@@ -3982,6 +4008,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 		importMergeSchemaTableTableClearDeps( dst, src );
 		importMergeSchemaTableTableDelDeps( dst, src );
 		importMergeSchemaTableServerMethods( dst, src );
+		importMergeSchemaRoles( dst, src );
 	}
 
 	public void startElement(
