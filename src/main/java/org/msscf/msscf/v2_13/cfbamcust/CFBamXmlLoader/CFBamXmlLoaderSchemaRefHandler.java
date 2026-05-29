@@ -1504,6 +1504,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 				dstEditDef.setRequiredContainerSchemaDef( dst );
 				dstEditDef.setRequiredName( role.getRequiredName() );
 				dstEditDef.setRequiredMembershipString(role.getRequiredMembershipString());
+				dstEditDef.setRequiredRoleScope(role.getRequiredRoleScope());
 				ICFBamSchemaDefObj lookupSchema = role.getOptionalLookupDefSchema();
 				if( lookupSchema == null ) {
 					lookupSchema = src;

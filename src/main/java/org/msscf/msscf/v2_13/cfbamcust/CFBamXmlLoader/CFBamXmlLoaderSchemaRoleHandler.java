@@ -95,6 +95,7 @@ public class CFBamXmlLoaderSchemaRoleHandler
 		ICFBamScopeObj refScopeDef = null;
 		ICFBamSchemaDefObj refDefSchema = null;
 		// SchemaRole Attributes
+		String attrRoleScope = null;
 		// SchemaRole References
 		ICFBamSchemaDefObj refSchemaDef = null;
 		// Attribute Extraction
@@ -165,6 +166,15 @@ public class CFBamXmlLoaderSchemaRoleHandler
 					}
 					attrDefSchema = attrs.getValue( idxAttr );
 				}
+				else if( attrLocalName.equals( "RoleScope" ) ) {
+					if( attrRoleScope != null ) {
+						throw new CFLibUniqueIndexViolationException( getClass(),
+							S_ProcName,
+							S_LocalName,
+							attrLocalName );
+					}
+					attrRoleScope = attrs.getValue( idxAttr );
+				}
 				else if( attrLocalName.equals( "schemaLocation" ) ) {
 					// ignored
 				}
@@ -189,6 +199,12 @@ public class CFBamXmlLoaderSchemaRoleHandler
 					0,
 					"MembershipString" );
 			}
+			if( attrRoleScope == null ) {
+				throw new CFLibNullArgumentException( getClass(),
+					S_ProcName,
+					0,
+					"RoleScope" );
+			}
 
 			// Save named attributes to context
 			CFLibXmlCoreContext curContext = getParser().getCurContext();
@@ -196,6 +212,7 @@ public class CFBamXmlLoaderSchemaRoleHandler
 			curContext.putNamedValue( "Name", attrName );
 			curContext.putNamedValue( "MembershipString", attrMembershipString );
 			curContext.putNamedValue( "DefSchema", attrDefSchema );
+			curContext.putNamedValue( "RoleScope", attrRoleScope );
 
 			// Convert string attributes to native Java types
 			// and apply the converted attributes to the editBuff.
@@ -212,6 +229,9 @@ public class CFBamXmlLoaderSchemaRoleHandler
 
 			String natMembershipString = attrMembershipString;
 			editBuff.setRequiredMembershipString( natMembershipString );
+
+			ICFBamSchema.RoleScopeEnum natRoleScope = CFBamSchema.parseRoleScopeEnum( attrRoleScope );
+			editBuff.setRequiredRoleScope( natRoleScope );
 
 			// Get the scope/container object
 
@@ -289,6 +309,7 @@ public class CFBamXmlLoaderSchemaRoleHandler
 				editSchemaRole.setRequiredName( editBuff.getRequiredName() );
 				editSchemaRole.setRequiredMembershipString( editBuff.getRequiredMembershipString() );
 				editSchemaRole.setOptionalLookupDefSchema( editBuff.getOptionalLookupDefSchema() );
+				editSchemaRole.setRequiredRoleScope( editBuff.getRequiredRoleScope() );
 			}
 
 			if( origSchemaRole != null ) {
