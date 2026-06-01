@@ -1503,7 +1503,8 @@ public class CFBamXmlLoaderSchemaRefHandler
 				dstEditDef.setRequiredOwnerTenant( dst.getRequiredOwnerTenant() );
 				dstEditDef.setRequiredContainerSchemaDef( dst );
 				dstEditDef.setRequiredName( role.getRequiredName() );
-				dstEditDef.setRequiredMembershipString(role.getRequiredMembershipString());
+				dstEditDef.setRequiredIncludes(role.getRequiredIncludes());
+				dstEditDef.setRequiredEnables(role.getRequiredEnables());
 				dstEditDef.setRequiredRoleScope(role.getRequiredRoleScope());
 				ICFBamSchemaDefObj lookupSchema = role.getOptionalLookupDefSchema();
 				if( lookupSchema == null ) {

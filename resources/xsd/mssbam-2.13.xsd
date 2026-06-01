@@ -1742,7 +1742,14 @@
 	</xsd:restriction>
 </xsd:simpleType>
 
-<xsd:simpleType name="RoleDefMembershipStringType">
+<xsd:simpleType name="RoleDefEnablesType">
+	<xsd:restriction base="xsd:string">
+		<xsd:maxLength value="2000000"/>
+		<xsd:whiteSpace value="preserve"/>
+	</xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="RoleDefIncludesType">
 	<xsd:restriction base="xsd:string">
 		<xsd:maxLength value="2000000"/>
 		<xsd:whiteSpace value="preserve"/>
@@ -5176,7 +5183,8 @@
 		</xsd:choice>
 	</xsd:sequence>
 	<xsd:attribute name="Name" type="RoleDefNameType" use="required"/>
-	<xsd:attribute name="MembershipString" type="RoleDefMembershipStringType" use="required"/>
+	<xsd:attribute name="Enables" type="RoleDefEnablesType" use="required"/>
+	<xsd:attribute name="Includes" type="RoleDefIncludesType" use="required"/>
 	<xsd:attribute name="DefSchema" type="xsd:string" use="optional"/>
 </xsd:complexType>
 
