@@ -42,6 +42,8 @@
  */
 
 package org.msscf.msscf.v2_13.cfbamcust.CFBamXmlLoader;
+import org.msscf.msscf.v2_13.cfbam.CFBam.CFBamSchema;
+import org.msscf.msscf.v2_13.cfbam.CFBam.ICFBamSchema;
 import org.msscf.msscf.v2_13.cflib.CFLib.*;
 import org.msscf.msscf.v2_13.cflib.CFLib.xml.*;
 import org.xml.sax.*;
@@ -80,6 +82,7 @@ public class CFBamXmlLoaderServerProcHandler
 			String	attrSuffix = null;
 			String	attrIsInstanceMethod = null;
 			String	attrIsServerOnly = null;
+			String	attrCodeVis = null;
 			// ServerProc References
 			ICFBamTenantObj refSrvProcTenant = null;
 			ICFBamTableObj refForTable = null;
@@ -196,6 +199,15 @@ public class CFBamXmlLoaderServerProcHandler
 					}
 					attrIsServerOnly = attrs.getValue( idxAttr );
 				}
+				else if( attrLocalName.equals( "CodeVis" ) ) {
+					if( attrCodeVis != null ) {
+						throw new CFLibUniqueIndexViolationException( getClass(),
+							S_ProcName,
+							S_LocalName,
+							attrLocalName );
+					}
+					attrCodeVis = attrs.getValue( idxAttr );
+				}
 				else if( attrLocalName.equals( "schemaLocation" ) ) {
 					// ignored
 				}
@@ -220,6 +232,9 @@ public class CFBamXmlLoaderServerProcHandler
 					0,
 					"IsInstanceMethod" );
 			}
+			if( ( attrCodeVis == null ) || ( attrCodeVis.length() <= 0 ) ) {
+				attrCodeVis = ICFBamSchema.CodeVisibilityEnum.Public.name();
+			}
 
 			// Save named attributes to context
 			CFLibXmlCoreContext curContext = getParser().getCurContext();
@@ -231,6 +246,7 @@ public class CFBamXmlLoaderServerProcHandler
 			curContext.putNamedValue( "Description", attrDescription );
 			curContext.putNamedValue( "Suffix", attrSuffix );
 			curContext.putNamedValue( "IsInstanceMethod", attrIsInstanceMethod );
+			curContext.putNamedValue( "CodeVis", attrCodeVis );
 
 			// Convert string attributes to native Cafe types
 			// and apply the converted attributes to the editBuff.
@@ -290,6 +306,9 @@ public class CFBamXmlLoaderServerProcHandler
 					"Unexpected IsServerOnly value, must be one of true, false, yes, no, 1, or 0, not \"" + attrIsServerOnly + "\"" );
 			}
 			editBuff.setRequiredIsServerOnly( natIsServerOnly );
+
+			ICFBamSchema.CodeVisibilityEnum natCodeVis = CFBamSchema.parseCodeVisibilityEnum( attrCodeVis );
+			editBuff.setRequiredCodeVis( natCodeVis );
 
 			// Get the scope/container object
 

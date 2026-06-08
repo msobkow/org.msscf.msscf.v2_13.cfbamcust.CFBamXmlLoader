@@ -43,6 +43,8 @@
 
 package org.msscf.msscf.v2_13.cfbamcust.CFBamXmlLoader;
 
+import org.msscf.msscf.v2_13.cfbam.CFBam.CFBamSchema;
+import org.msscf.msscf.v2_13.cfbam.CFBam.ICFBamSchema;
 import org.msscf.msscf.v2_13.cflib.CFLib.*;
 import org.msscf.msscf.v2_13.cflib.CFLib.xml.*;
 import org.xml.sax.*;
@@ -82,6 +84,7 @@ public class CFBamXmlLoaderServerListFuncHandler
 			String	attrIsInstanceMethod = null;
 			String	attrReturnTable = null;
 			String	attrIsServerOnly = null;
+			String	attrCodeVis = null;
 			// ServerListFunc References
 			ICFBamTenantObj refSrvProcTenant = null;
 			ICFBamTableObj refForTable = null;
@@ -208,6 +211,15 @@ public class CFBamXmlLoaderServerListFuncHandler
 					}
 					attrReturnTable = attrs.getValue( idxAttr );
 				}
+				else if( attrLocalName.equals( "CodeVis" ) ) {
+					if( attrCodeVis != null ) {
+						throw new CFLibUniqueIndexViolationException( getClass(),
+							S_ProcName,
+							S_LocalName,
+							attrLocalName );
+					}
+					attrCodeVis = attrs.getValue( idxAttr );
+				}
 				else if( attrLocalName.equals( "schemaLocation" ) ) {
 					// ignored
 				}
@@ -237,6 +249,9 @@ public class CFBamXmlLoaderServerListFuncHandler
 					S_ProcName,
 					0,
 					"ReturnTable" );
+			}
+			if( ( attrCodeVis == null ) || ( attrCodeVis.length() <= 0 ) ) {
+				attrCodeVis = ICFBamSchema.CodeVisibilityEnum.Public.name();
 			}
 
 			// Save named attributes to context
@@ -300,6 +315,9 @@ public class CFBamXmlLoaderServerListFuncHandler
 					"Unexpected IsServerOnly value, must be one of true, false, yes, no, 1, or 0, not \"" + attrIsServerOnly + "\"" );
 			}
 			editBuff.setRequiredIsServerOnly( natIsServerOnly );
+
+			ICFBamSchema.CodeVisibilityEnum natCodeVis = CFBamSchema.parseCodeVisibilityEnum( attrCodeVis );
+			editBuff.setRequiredCodeVis( natCodeVis );
 
 			// Get the scope/container object
 

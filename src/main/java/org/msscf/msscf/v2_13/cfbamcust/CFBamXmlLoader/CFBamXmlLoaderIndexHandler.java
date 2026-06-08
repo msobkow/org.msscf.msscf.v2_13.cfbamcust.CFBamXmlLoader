@@ -43,13 +43,8 @@
 
 package org.msscf.msscf.v2_13.cfbamcust.CFBamXmlLoader;
 
-import java.math.*;
-import java.sql.*;
-import java.text.*;
-import java.util.*;
 import org.msscf.msscf.v2_13.cflib.CFLib.*;
 import org.msscf.msscf.v2_13.cflib.CFLib.xml.*;
-import org.apache.commons.codec.binary.Base64;
 import org.xml.sax.*;
 import org.msscf.msscf.v2_13.cfbam.CFBam.*;
 import org.msscf.msscf.v2_13.cfbam.CFBamObj.*;
@@ -88,6 +83,7 @@ public class CFBamXmlLoaderIndexHandler
 			String	attrSuffix = null;
 			String	attrIsUnique = null;
 			String	attrIsDbMapped = null;
+			String	attrCodeVis = null;
 			// Index References
 			ICFBamTenantObj refIdxTenant = null;
 			ICFBamTableObj refTable = null;
@@ -213,6 +209,15 @@ public class CFBamXmlLoaderIndexHandler
 					}
 					attrIsDbMapped = attrs.getValue( idxAttr );
 				}
+				else if( attrLocalName.equals( "CodeVis" ) ) {
+					if( attrCodeVis != null ) {
+						throw new CFLibUniqueIndexViolationException( getClass(),
+							S_ProcName,
+							S_LocalName,
+							attrLocalName );
+					}
+					attrCodeVis = attrs.getValue( idxAttr );
+				}
 				else if( attrLocalName.equals( "schemaLocation" ) ) {
 					// ignored
 				}
@@ -243,6 +248,9 @@ public class CFBamXmlLoaderIndexHandler
 					0,
 					"IsDbMapped" );
 			}
+			if( ( attrCodeVis == null ) || ( attrCodeVis.length() <= 0 ) ) {
+				attrCodeVis = ICFBamSchema.CodeVisibilityEnum.Public.name();
+			}
 
 			// Save named attributes to context
 			CFLibXmlCoreContext curContext = getParser().getCurContext();
@@ -260,6 +268,7 @@ public class CFBamXmlLoaderIndexHandler
 			curContext.putNamedValue( "Suffix", attrSuffix );
 			curContext.putNamedValue( "IsUnique", attrIsUnique );
 			curContext.putNamedValue( "IsDbMapped", attrIsDbMapped );
+			curContext.putNamedValue( "CodeVis", attrCodeVis );
 
 			// Convert string attributes to native Cafe types
 			// and apply the converted attributes to the editBuff.
@@ -319,6 +328,9 @@ public class CFBamXmlLoaderIndexHandler
 					"Unexpected IsDbMapped value, must be one of true, false, yes, no, 1, or 0, not \"" + attrIsDbMapped + "\"" );
 			}
 			editBuff.setRequiredIsDbMapped( natIsDbMapped );
+
+			ICFBamSchema.CodeVisibilityEnum natCodeVis = CFBamSchema.parseCodeVisibilityEnum( attrCodeVis );
+			editBuff.setRequiredCodeVis( natCodeVis );
 
 			// Get the scope/container object
 

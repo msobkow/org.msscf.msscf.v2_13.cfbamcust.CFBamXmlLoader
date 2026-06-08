@@ -2668,6 +2668,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 		editDstIndex.setRequiredIsDbMapped( srcIndex.getRequiredIsDbMapped() );
 		editDstIndex.setRequiredIsUnique( srcIndex.getRequiredIsUnique() );
 		editDstIndex.setRequiredName( srcIndex.getRequiredName() );
+		editDstIndex.setRequiredCodeVis(srcIndex.getRequiredCodeVis() );
 		editDstIndex.setOptionalDbName( srcIndex.getOptionalDbName() );
 		editDstIndex.setOptionalDescription( srcIndex.getOptionalDescription() );
 		editDstIndex.setOptionalLabel( srcIndex.getOptionalLabel() );
@@ -2823,6 +2824,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 		editDstServerMethod.setRequiredJMethodBody( srcServerMethod.getRequiredJMethodBody() );
 		editDstServerMethod.setRequiredCppMethodBody( srcServerMethod.getRequiredCppMethodBody() );
 		editDstServerMethod.setRequiredCsMethodBody( srcServerMethod.getRequiredCsMethodBody() );
+		editDstServerMethod.setRequiredCodeVis( srcServerMethod.getRequiredCodeVis() );
 		editDstServerMethod.setOptionalDescription( srcServerMethod.getOptionalDescription() );
 		editDstServerMethod.setOptionalLabel( srcServerMethod.getOptionalLabel() );
 		editDstServerMethod.setOptionalShortDescription( srcServerMethod.getOptionalShortDescription() );
@@ -3122,6 +3124,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 		editDstRelation.setRequiredIsRequired( srcRelation.getRequiredIsRequired() );
 		editDstRelation.setRequiredIsXsdContainer( srcRelation.getRequiredIsXsdContainer() );
 		editDstRelation.setRequiredIsLateResolver( srcRelation.getRequiredIsLateResolver() );
+		editDstRelation.setRequiredCodeVis( srcRelation.getRequiredCodeVis() );
 		editDstRelation.setOptionalDbName( srcRelation.getOptionalDbName() );
 		editDstRelation.setOptionalDescription( srcRelation.getOptionalDescription() );
 		editDstRelation.setOptionalLabel( srcRelation.getOptionalLabel() );

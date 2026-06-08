@@ -93,6 +93,7 @@ public class CFBamXmlLoaderTableHandler
 			String	attrSecScope = null;
 			String	attrIsMutable = null;
 			String	attrIsServerOnly = null;
+			String	attrCodeVis = null;
 			// Table References
 			ICFBamSchemaDefObj refSchemaDef = null;
 			ICFBamIndexObj refLookupIndex = null;
@@ -312,6 +313,15 @@ public class CFBamXmlLoaderTableHandler
 					}
 					attrIsServerOnly = attrs.getValue( idxAttr );
 				}
+				else if( attrLocalName.equals( "CodeVis" ) ) {
+					if( attrCodeVis != null ) {
+						throw new CFLibUniqueIndexViolationException( getClass(),
+							S_ProcName,
+							S_LocalName,
+							attrLocalName );
+					}
+					attrCodeVis = attrs.getValue( idxAttr );
+				}
 				else if( attrLocalName.equals( "schemaLocation" ) ) {
 					// ignored
 				}
@@ -366,6 +376,9 @@ public class CFBamXmlLoaderTableHandler
 					0,
 					"SecScope" );
 			}
+			if( ( attrCodeVis == null ) || ( attrCodeVis.length() <= 0 ) ) {
+				attrCodeVis = ICFBamSchema.CodeVisibilityEnum.Public.name();
+			}
 
 			// Save named attributes to context
 			CFLibXmlCoreContext curContext = getParser().getCurContext();
@@ -393,6 +406,7 @@ public class CFBamXmlLoaderTableHandler
 			curContext.putNamedValue( "SecScope", attrSecScope );
 			curContext.putNamedValue( "IsMutable", attrIsMutable );
 			curContext.putNamedValue( "IsServerOnly", attrIsServerOnly );
+			curContext.putNamedValue( "CodeVis", attrCodeVis );
 
 			// Convert string attributes to native Cafe types
 			// and apply the converted attributes to the editBuff.
@@ -517,6 +531,9 @@ public class CFBamXmlLoaderTableHandler
 					"Unexpected IsServerOnly value, must be one of true, false, yes, no, 1, or 0, not \"" + attrPageData + "\"" );
 			}
 			editBuff.setRequiredIsServerOnly( natIsServerOnly );
+
+			ICFBamSchema.CodeVisibilityEnum natCodeVis = CFBamSchema.parseCodeVisibilityEnum( attrCodeVis );
+			editBuff.setRequiredCodeVis( natCodeVis );
 
 			// Get the scope/container object
 

@@ -98,6 +98,7 @@ public class CFBamXmlLoaderRelationHandler
 			String	attrNarrowed = null;
 			String	attrPopDepChain = null;
 			String	attrAllowAddendum = null;
+			String	attrCodeVis = null;
 			// Relation References
 			ICFBamTenantObj refRelTenant = null;
 			ICFBamSchema.RelationTypeEnum refRelationType = null;
@@ -291,6 +292,15 @@ public class CFBamXmlLoaderRelationHandler
 					}
 					attrAllowAddendum = attrs.getValue( idxAttr );
 				}
+				else if( attrLocalName.equals( "CodeVis" ) ) {
+					if( attrCodeVis != null ) {
+						throw new CFLibUniqueIndexViolationException( getClass(),
+							S_ProcName,
+							S_LocalName,
+							attrLocalName );
+					}
+					attrCodeVis = attrs.getValue( idxAttr );
+				}
 				else if( attrLocalName.equals( "schemaLocation" ) ) {
 					// ignored
 				}
@@ -339,6 +349,9 @@ public class CFBamXmlLoaderRelationHandler
 					0,
 					"ToIndex" );
 			}
+			if( ( attrCodeVis == null ) || ( attrCodeVis.length() <= 0 ) ) {
+				attrCodeVis = ICFBamSchema.CodeVisibilityEnum.Public.name();
+			}
 
 			// Save named attributes to context
 			CFLibXmlCoreContext curContext = getParser().getCurContext();
@@ -363,6 +376,7 @@ public class CFBamXmlLoaderRelationHandler
 			curContext.putNamedValue( "Narrowed", attrNarrowed );
 			curContext.putNamedValue( "PopDepChain", attrPopDepChain );
 			curContext.putNamedValue( "AllowAddendum", attrAllowAddendum );
+			curContext.putNamedValue( "CodeVis", attrCodeVis );
 
 			// Convert string attributes to native Cafe types
 			// and apply the converted attributes to the editBuff.
@@ -454,6 +468,9 @@ public class CFBamXmlLoaderRelationHandler
 					"Unexpected AllowAddendum value, must be one of true, false, yes, no, 1, or 0, not \"" + attrAllowAddendum + "\"" );
 			}
 			editBuff.setRequiredAllowAddendum( natAllowAddendum );
+
+			ICFBamSchema.CodeVisibilityEnum natCodeVis = CFBamSchema.parseCodeVisibilityEnum( attrCodeVis );
+			editBuff.setRequiredCodeVis( natCodeVis );
 
 			// Get the scope/container object
 

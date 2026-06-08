@@ -88,6 +88,7 @@ public class CFBamXmlLoaderPrimaryIndexHandler
 			String	attrSuffix = null;
 			String	attrIsUnique = null;
 			String	attrIsDbMapped = null;
+			String	attrCodeVis = null;
 			// Index References
 			ICFBamTenantObj refIdxTenant = null;
 			ICFBamTableObj refTable = null;
@@ -213,6 +214,15 @@ public class CFBamXmlLoaderPrimaryIndexHandler
 					}
 					attrIsDbMapped = attrs.getValue( idxAttr );
 				}
+				else if( attrLocalName.equals( "CodeVis" ) ) {
+					if( attrCodeVis != null ) {
+						throw new CFLibUniqueIndexViolationException( getClass(),
+							S_ProcName,
+							S_LocalName,
+							attrLocalName );
+					}
+					attrCodeVis = attrs.getValue( idxAttr );
+				}
 				else if( attrLocalName.equals( "schemaLocation" ) ) {
 					// ignored
 				}
@@ -243,6 +253,9 @@ public class CFBamXmlLoaderPrimaryIndexHandler
 						0,
 						"IsDbMapped" );
 			}
+			if( ( attrCodeVis == null ) || ( attrCodeVis.length() <= 0 ) ) {
+				attrCodeVis = ICFBamSchema.CodeVisibilityEnum.Public.name();
+			}
 
 			// Save named attributes to context
 			CFLibXmlCoreContext curContext = getParser().getCurContext();
@@ -260,6 +273,7 @@ public class CFBamXmlLoaderPrimaryIndexHandler
 			curContext.putNamedValue( "Suffix", attrSuffix );
 			curContext.putNamedValue( "IsUnique", attrIsUnique );
 			curContext.putNamedValue( "IsDbMapped", attrIsDbMapped );
+			curContext.putNamedValue( "CodeVis", attrCodeVis );
 
 			// Convert string attributes to native Cafe types
 			// and apply the converted attributes to the editBuff.
@@ -319,6 +333,9 @@ public class CFBamXmlLoaderPrimaryIndexHandler
 					"Unexpected IsDbMapped value, must be one of true, false, yes, no, 1, or 0, not \"" + attrIsDbMapped + "\"" );
 			}
 			editBuff.setRequiredIsDbMapped( natIsDbMapped );
+
+			ICFBamSchema.CodeVisibilityEnum natCodeVis = CFBamSchema.parseCodeVisibilityEnum( attrCodeVis );
+			editBuff.setRequiredCodeVis( natCodeVis );
 
 			// Get the scope/container object
 
