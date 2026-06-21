@@ -102,6 +102,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
 						dstEditDef.setOptionalTrueString( srcGenDef.getOptionalTrueString() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -130,6 +131,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -177,6 +179,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditGenDef.setOptionalMinValue( srcGenDef.getOptionalMinValue() );
 						dstEditGenDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditGenDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditGenDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -224,6 +227,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditGenDef.setOptionalMinValue( srcGenDef.getOptionalMinValue() );
 						dstEditGenDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditGenDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditGenDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -271,6 +275,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditGenDef.setOptionalMinValue( srcGenDef.getOptionalMinValue() );
 						dstEditGenDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditGenDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditGenDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -316,6 +321,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditGenDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditGenDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditGenDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditGenDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -361,6 +367,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditGenDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditGenDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditGenDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditGenDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -406,6 +413,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditGenDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditGenDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditGenDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditGenDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -451,6 +459,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditGenDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditGenDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditGenDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditGenDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -496,6 +505,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditGenDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditGenDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditGenDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditGenDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -541,6 +551,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditGenDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditGenDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditGenDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditGenDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -586,6 +597,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditGenDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditGenDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditGenDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditGenDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -631,6 +643,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditGenDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditGenDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditGenDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditGenDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -662,6 +675,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalMinValue( srcGenDef.getOptionalMinValue() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -722,6 +736,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalMinValue( srcGenDef.getOptionalMinValue() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -751,6 +766,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalMinValue( srcGenDef.getOptionalMinValue() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -780,6 +796,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalMinValue( srcGenDef.getOptionalMinValue() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -809,6 +826,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalMinValue( srcGenDef.getOptionalMinValue() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -838,6 +856,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalMinValue( srcGenDef.getOptionalMinValue() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -867,6 +886,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalMinValue( srcGenDef.getOptionalMinValue() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -898,6 +918,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalMinValue( srcGenDef.getOptionalMinValue() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -927,6 +948,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalMinValue( srcGenDef.getOptionalMinValue() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -956,6 +978,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalMinValue( srcGenDef.getOptionalMinValue() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -984,6 +1007,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -1012,6 +1036,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -1040,6 +1065,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -1069,6 +1095,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -1097,6 +1124,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -1123,6 +1151,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -1149,6 +1178,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -1175,6 +1205,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -1201,6 +1232,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -1227,6 +1259,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -1253,6 +1286,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -1280,6 +1314,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -1307,6 +1342,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -1334,6 +1370,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -1361,6 +1398,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -1388,6 +1426,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -1415,6 +1454,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -1442,6 +1482,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -1469,6 +1510,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -1541,6 +1583,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 				editDstTable.setRequiredPageData( srcTable.getRequiredPageData() );
 				editDstTable.setRequiredIsMutable( srcTable.getRequiredIsMutable() );
 				editDstTable.setRequiredIsServerOnly( srcTable.getRequiredIsServerOnly() );
+				editDstTable.setRequiredCodeVis(srcTable.getRequiredCodeVis());
 				editDstTable.setOptionalJDb2LUWTableImplementation( srcTable.getOptionalJDb2LUWTableImplementation() );
 				editDstTable.setOptionalJDb2LUWTableImport( srcTable.getOptionalJDb2LUWTableImport() );
 				editDstTable.setOptionalJDb2LUWTableMembers( srcTable.getOptionalJDb2LUWTableMembers() );
@@ -1817,6 +1860,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 							dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 							dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 							dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+							dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 							ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 							if( lookupSchema == null ) {
 								lookupSchema = src;
@@ -1848,6 +1892,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
 						dstEditDef.setOptionalTrueString( srcGenDef.getOptionalTrueString() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -1876,6 +1921,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -1904,6 +1950,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalMinValue( srcGenDef.getOptionalMinValue() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -1932,6 +1979,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalMinValue( srcGenDef.getOptionalMinValue() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -1960,6 +2008,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalMinValue( srcGenDef.getOptionalMinValue() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -1988,6 +2037,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalMinValue( srcGenDef.getOptionalMinValue() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -2016,6 +2066,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalMinValue( srcGenDef.getOptionalMinValue() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -2044,6 +2095,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalMinValue( srcGenDef.getOptionalMinValue() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -2074,6 +2126,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalMinValue( srcGenDef.getOptionalMinValue() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -2102,6 +2155,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalMinValue( srcGenDef.getOptionalMinValue() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -2130,6 +2184,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalMinValue( srcGenDef.getOptionalMinValue() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -2157,6 +2212,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -2184,6 +2240,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -2212,6 +2269,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -2240,6 +2298,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -2267,6 +2326,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -2292,6 +2352,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -2317,6 +2378,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -2342,6 +2404,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -2367,6 +2430,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -2392,6 +2456,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -2417,6 +2482,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -2443,6 +2509,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -2469,6 +2536,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -2495,6 +2563,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -2521,6 +2590,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -2547,6 +2617,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -2573,6 +2644,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -2599,6 +2671,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;
@@ -2625,6 +2698,7 @@ public class CFBamXmlLoaderSchemaRefHandler
 						dstEditDef.setOptionalLabel( srcGenDef.getOptionalLabel() );
 						dstEditDef.setOptionalShortDescription( srcGenDef.getOptionalShortDescription() );
 						dstEditDef.setOptionalShortName( srcGenDef.getOptionalShortName() );
+						dstEditDef.setRequiredCodeVis(srcGenDef.getRequiredCodeVis());
 						ICFBamSchemaDefObj lookupSchema = srcGenDef.getOptionalLookupDefSchema();
 						if( lookupSchema == null ) {
 							lookupSchema = src;

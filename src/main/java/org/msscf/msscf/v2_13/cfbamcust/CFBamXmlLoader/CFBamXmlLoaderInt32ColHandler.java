@@ -85,6 +85,7 @@ public class CFBamXmlLoaderInt32ColHandler
 			String	attrGenerateId = null;
 			String	attrDefaultXmlValue = null;
 			String	attrImplementsPolymorph = null;
+			String	attrCodeVis = null;
 			// Value References
 			ICFBamTenantObj refTenant = null;
 			ICFBamScopeObj refScope = null;
@@ -256,6 +257,15 @@ public class CFBamXmlLoaderInt32ColHandler
 								attrLocalName );
 					}
 					attrImplementsPolymorph = attrs.getValue( idxAttr );
+				}
+				else if( attrLocalName.equals( "CodeVis" ) ) {
+					if( attrCodeVis != null ) {
+						throw new CFLibUniqueIndexViolationException( getClass(),
+							S_ProcName,
+							S_LocalName,
+							attrLocalName );
+					}
+					attrCodeVis = attrs.getValue( idxAttr );
 				}
 				else if( attrLocalName.equals( "schemaLocation" ) ) {
 					// ignored
