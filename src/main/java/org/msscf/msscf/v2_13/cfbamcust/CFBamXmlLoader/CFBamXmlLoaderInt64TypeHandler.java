@@ -293,6 +293,7 @@ public class CFBamXmlLoaderInt64TypeHandler
 			curContext.putNamedValue( "InitValue", attrInitValue );
 			curContext.putNamedValue( "MinValue", attrMinValue );
 			curContext.putNamedValue( "MaxValue", attrMaxValue );
+			curContext.putNamedValue( "CodeVis", attrCodeVis );
 
 			// Convert string attributes to native Cafe types
 			// and apply the converted attributes to the editBuff.

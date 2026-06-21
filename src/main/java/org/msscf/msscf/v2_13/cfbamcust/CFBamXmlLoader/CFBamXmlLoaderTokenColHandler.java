@@ -310,6 +310,7 @@ public class CFBamXmlLoaderTokenColHandler
 			curContext.putNamedValue( "InitValue", attrInitValue );
 			curContext.putNamedValue( "DefaultXmlValue",  attrDefaultXmlValue );
 			curContext.putNamedValue( "ImplementsPolymorph",  attrImplementsPolymorph );
+			curContext.putNamedValue( "CodeVis", attrCodeVis );
 
 			// Convert string attributes to native Cafe types
 			// and apply the converted attributes to the editBuff.

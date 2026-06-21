@@ -304,6 +304,7 @@ public class CFBamXmlLoaderBoolTypeHandler
 			curContext.putNamedValue( "FalseString", attrFalseString );
 			curContext.putNamedValue( "TrueString", attrTrueString );
 			curContext.putNamedValue( "NullString", attrNullString );
+			curContext.putNamedValue( "CodeVis", attrCodeVis );
 
 			// Convert string attributes to native Cafe types
 			// and apply the converted attributes to the editBuff.

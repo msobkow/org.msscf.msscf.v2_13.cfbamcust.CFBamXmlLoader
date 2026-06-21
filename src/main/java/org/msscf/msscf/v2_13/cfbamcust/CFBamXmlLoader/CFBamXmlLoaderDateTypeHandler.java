@@ -260,6 +260,7 @@ public class CFBamXmlLoaderDateTypeHandler
 			curContext.putNamedValue( "IsNullable", attrIsNullable );
 			curContext.putNamedValue( "GenerateId", attrGenerateId );
 			curContext.putNamedValue( "DbName", attrDbName );
+			curContext.putNamedValue( "CodeVis", attrCodeVis );
 
 			// Convert string attributes to native Cafe types
 			// and apply the converted attributes to the editBuff.

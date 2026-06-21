@@ -288,6 +288,7 @@ public class CFBamXmlLoaderStringTypeHandler
 			curContext.putNamedValue( "DbName", attrDbName );
 			curContext.putNamedValue( "MaxLen", attrMaxLen );
 			curContext.putNamedValue( "InitValue", attrInitValue );
+			curContext.putNamedValue( "CodeVis", attrCodeVis );
 
 			// Convert string attributes to native Cafe types
 			// and apply the converted attributes to the editBuff.

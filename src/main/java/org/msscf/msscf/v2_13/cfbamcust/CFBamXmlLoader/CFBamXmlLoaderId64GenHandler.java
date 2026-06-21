@@ -341,6 +341,7 @@ public class CFBamXmlLoaderId64GenHandler
 			curContext.putNamedValue( "Slice", attrSlice );
 			curContext.putNamedValue( "BlockSize", attrBlockSize );
 			curContext.putNamedValue( "Dispenser", attrDispenser );
+			curContext.putNamedValue( "CodeVis", attrCodeVis );
 
 			// Convert string attributes to native Cafe types
 			// and apply the converted attributes to the editBuff.

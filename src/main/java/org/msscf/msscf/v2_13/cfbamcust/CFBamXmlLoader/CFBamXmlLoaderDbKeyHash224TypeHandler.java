@@ -271,6 +271,7 @@ public class CFBamXmlLoaderDbKeyHash224TypeHandler
 			curContext.putNamedValue( "GenerateId", attrGenerateId );
 			curContext.putNamedValue( "DbName", attrDbName );
 			curContext.putNamedValue( "InitValue", attrInitValue );
+			curContext.putNamedValue( "CodeVis", attrCodeVis );
 
 			// Convert string attributes to native Cafe types
 			// and apply the converted attributes to the editBuff.
