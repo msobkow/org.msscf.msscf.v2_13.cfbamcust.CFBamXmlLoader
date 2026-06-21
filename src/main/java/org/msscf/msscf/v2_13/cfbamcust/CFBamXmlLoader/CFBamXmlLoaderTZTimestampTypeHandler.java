@@ -321,6 +321,9 @@ public class CFBamXmlLoaderTZTimestampTypeHandler
 			String natDbName = attrDbName;
 			editBuff.setOptionalDbName( natDbName );
 
+			ICFBamSchema.CodeVisibilityEnum natCodeVis = CFBamSchema.parseCodeVisibilityEnum( attrCodeVis );
+			editBuff.setRequiredCodeVis( natCodeVis );
+
 			// Get the scope/container object
 
 			CFLibXmlCoreContext parentContext = curContext.getPrevContext();

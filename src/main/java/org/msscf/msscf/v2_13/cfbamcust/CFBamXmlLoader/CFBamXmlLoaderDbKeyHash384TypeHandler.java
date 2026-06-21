@@ -342,6 +342,9 @@ public class CFBamXmlLoaderDbKeyHash384TypeHandler
 			//	editBuff.setOptionalInitValue( natInitValue );
 			editBuff.setOptionalInitValue(attrInitValue);
 
+			ICFBamSchema.CodeVisibilityEnum natCodeVis = CFBamSchema.parseCodeVisibilityEnum( attrCodeVis );
+			editBuff.setRequiredCodeVis( natCodeVis );
+
 			// Get the scope/container object
 
 			CFLibXmlCoreContext parentContext = curContext.getPrevContext();

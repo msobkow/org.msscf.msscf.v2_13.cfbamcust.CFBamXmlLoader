@@ -380,6 +380,9 @@ public class CFBamXmlLoaderInt16TypeHandler
 			}
 			editBuff.setOptionalMaxValue( natMaxValue );
 
+			ICFBamSchema.CodeVisibilityEnum natCodeVis = CFBamSchema.parseCodeVisibilityEnum( attrCodeVis );
+			editBuff.setRequiredCodeVis( natCodeVis );
+
 			// Get the scope/container object
 
 			CFLibXmlCoreContext parentContext = curContext.getPrevContext();

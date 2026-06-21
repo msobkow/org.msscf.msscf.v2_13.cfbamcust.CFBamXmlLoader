@@ -370,6 +370,9 @@ public class CFBamXmlLoaderDbKeyHash256ColHandler
 			}
 			editBuff.setOptionalGenerateId( natGenerateId );
 
+			ICFBamSchema.CodeVisibilityEnum natCodeVis = CFBamSchema.parseCodeVisibilityEnum( attrCodeVis );
+			editBuff.setRequiredCodeVis( natCodeVis );
+
 			String natDbName = attrDbName;
 			editBuff.setOptionalDbName( natDbName );
 

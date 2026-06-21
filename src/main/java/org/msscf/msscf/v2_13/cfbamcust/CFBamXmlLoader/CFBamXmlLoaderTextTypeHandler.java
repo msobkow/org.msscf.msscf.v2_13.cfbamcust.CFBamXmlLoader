@@ -369,6 +369,9 @@ public class CFBamXmlLoaderTextTypeHandler
 			String natInitValue = attrInitValue;
 			editBuff.setOptionalInitValue( natInitValue );
 
+			ICFBamSchema.CodeVisibilityEnum natCodeVis = CFBamSchema.parseCodeVisibilityEnum( attrCodeVis );
+			editBuff.setRequiredCodeVis( natCodeVis );
+
 			// Get the scope/container object
 
 			CFLibXmlCoreContext parentContext = curContext.getPrevContext();

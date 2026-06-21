@@ -396,6 +396,9 @@ public class CFBamXmlLoaderUuidGenHandler
 			int natBlockSize = Integer.parseInt( attrBlockSize );
 			editBuff.setRequiredBlockSize( natBlockSize );
 
+			ICFBamSchema.CodeVisibilityEnum natCodeVis = CFBamSchema.parseCodeVisibilityEnum( attrCodeVis );
+			editBuff.setRequiredCodeVis( natCodeVis );
+
 			// Get the scope/container object
 
 			CFLibXmlCoreContext parentContext = curContext.getPrevContext();
