@@ -287,6 +287,9 @@ public class CFBamXmlLoaderNmTokenColHandler
 					0,
 					"MaxLen" );
 			}
+			if( ( attrCodeVis == null ) || ( attrCodeVis.length() <= 0 ) ) {
+				attrCodeVis = "Public";
+			}
 
 			// Save named attributes to context
 			CFLibXmlCoreContext curContext = getParser().getCurContext();

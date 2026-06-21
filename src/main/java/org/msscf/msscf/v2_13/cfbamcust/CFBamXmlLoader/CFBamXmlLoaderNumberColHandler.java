@@ -323,6 +323,9 @@ public class CFBamXmlLoaderNumberColHandler
 					0,
 					"Precis" );
 			}
+			if( ( attrCodeVis == null ) || ( attrCodeVis.length() <= 0 ) ) {
+				attrCodeVis = "Public";
+			}
 
 			// Save named attributes to context
 			CFLibXmlCoreContext curContext = getParser().getCurContext();

@@ -291,6 +291,9 @@ public class CFBamXmlLoaderUInt64ColHandler
 					0,
 					"IsNullable" );
 			}
+			if( ( attrCodeVis == null ) || ( attrCodeVis.length() <= 0 ) ) {
+				attrCodeVis = "Public";
+			}
 
 			// Save named attributes to context
 			CFLibXmlCoreContext curContext = getParser().getCurContext();
