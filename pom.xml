@@ -4,12 +4,12 @@
   <parent>
     <groupId>org.msscf.msscf</groupId>
     <artifactId>org.msscf.msscf.v2_13</artifactId>
-    <version>2.13.42-alpha13-202610162030</version>
+    <version>2.13.42-alpha13-202610170845</version>
   </parent>
 
   <groupId>org.msscf.msscf.v2_13</groupId>
   <artifactId>org.msscf.msscf.v2_13.cfbamcust.CFBamXmlLoader</artifactId>
-  <version>2.13.42-alpha13-202610162030</version>
+  <version>2.13.42-alpha13-202610170845</version>
   <name>org.msscf.msscf.v2_13.cfbamcust.CFBamXmlLoader</name>
   <description>msscf CFBam 2.13 CFBamXmlLoader BAM SAX loader</description>
   <url>https://msscode.com/msscf/</url>
@@ -24,37 +24,37 @@
     <dependency>
       <groupId>org.msscf.msscf.v2_13</groupId>
       <artifactId>org.msscf.msscf.v2_13.cflib.CFLib</artifactId>
-      <version>2.13.42-alpha13-202610162030</version>
+      <version>2.13.42-alpha13-202610170845</version>
     </dependency>
     <dependency>
       <groupId>org.msscf.msscf.v2_13</groupId>
       <artifactId>org.msscf.msscf.v2_13.cfcore</artifactId>
-      <version>2.13.42-alpha13-202610162030</version>
+      <version>2.13.42-alpha13-202610170845</version>
     </dependency>
     <dependency>
       <groupId>org.msscf.msscf.v2_13</groupId>
       <artifactId>org.msscf.msscf.v2_13.cfbam</artifactId>
-      <version>2.13.42-alpha13-202610162030</version>
+      <version>2.13.42-alpha13-202610170845</version>
     </dependency>
     <dependency>
       <groupId>org.msscf.msscf.v2_13</groupId>
       <artifactId>org.msscf.msscf.v2_13.cfsec</artifactId>
-      <version>2.13.42-alpha13-202610162030</version>
+      <version>2.13.42-alpha13-202610170845</version>
     </dependency>
     <dependency>
       <groupId>org.msscf.msscf.v2_13</groupId>
       <artifactId>org.msscf.msscf.v2_13.cfint</artifactId>
-      <version>2.13.42-alpha13-202610162030</version>
+      <version>2.13.42-alpha13-202610170845</version>
     </dependency>
     <dependency>
       <groupId>org.msscf.msscf.v2_13</groupId>
       <artifactId>org.msscf.msscf.v2_13.cfbam.CFBamMssCF</artifactId>
-      <version>2.13.42-alpha13-202610162030</version>
+      <version>2.13.42-alpha13-202610170845</version>
     </dependency>
     <dependency>
       <groupId>org.msscf.msscf.v2_13</groupId>
       <artifactId>org.msscf.msscf.v2_13.cfbamcust.MSSBamCF</artifactId>
-      <version>2.13.42-alpha13-202610162030</version>
+      <version>2.13.42-alpha13-202610170845</version>
     </dependency>
   </dependencies>
 
